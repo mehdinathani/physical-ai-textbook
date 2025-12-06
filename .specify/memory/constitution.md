@@ -1,55 +1,45 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+- Version change: N/A → 1.0.0
+- Added sections: All principles and governance sections
+- Modified principles: None (new constitution)
+- Templates requiring updates: N/A
+- Follow-up TODOs: None
+-->
+# PhysAI Foundations Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### Academic Rigor
+The content (textbook) must be technically accurate, professional, and structured for university students. All documentation, examples, and explanations must maintain high educational standards with clear learning objectives, verifiable facts, and proper scientific foundations.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### Hackathon Efficiency
+"Done is better than perfect." Prioritize working features over complex abstractions. Focus on rapid prototyping and delivering functional solutions within time constraints. Choose proven, simple solutions over custom implementations unless absolutely necessary.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Modular Architecture
+Build the book structure (Docusaurus) so that adding the Chatbot and Auth in Phase 2 will be seamless. Maintain clear separation of concerns with well-defined interfaces between components to enable future expansion and parallel development.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### Context Awareness
+Always check `specs/tasks.md` before starting work to maintain history and ensure alignment with project requirements. Follow established patterns and maintain consistency with existing architecture and codebase.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### Clean UX
+Prioritize readability, high contrast, and intuitive navigation in all user-facing interfaces. Implement consistent design patterns, accessible color schemes, and clear information architecture to enhance the learning experience.
 
-### [PRINCIPLE_6_NAME]
+### Code Quality
+Use TypeScript for the Docusaurus frontend and Python for any script generation. Enforce strict typing, appropriate error handling, and follow established best practices for maintainability and extensibility. All code must be clean, well-documented, and testable.
 
+### Performance Efficiency
+Optimize for fast loading times and smooth interactions. Minimize bundle sizes, implement proper caching strategies, and ensure responsive design across all device types to support the educational experience.
 
-[PRINCIPLE__DESCRIPTION]
+## Development Standards
+All contributions must follow TypeScript strict mode, include appropriate unit tests for custom functionality, and maintain accessibility standards (WCAG AA minimum). Documentation must be comprehensive and updated with each feature addition.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Technology Stack
+Primary technologies include Docusaurus for documentation, TypeScript for type safety, Python for scripting and generation tasks, React for component development, and standard web technologies (HTML5, CSS3) for presentation. External dependencies should be evaluated for security, maintenance, and compatibility before integration.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+This constitution serves as the authoritative guide for all development decisions in the PhysAI Foundations project. All feature implementations, architectural decisions, and code contributions must align with these principles. Deviations require explicit justification and team consensus.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+Version changes follow semantic versioning: MAJOR for principle changes, MINOR for additions, PATCH for clarifications. Amendments require documentation of rationale and team approval.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-12-06 | **Last Amended**: 2025-12-06
