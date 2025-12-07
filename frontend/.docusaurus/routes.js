@@ -3,174 +3,139 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
-    path: '/__docusaurus/debug',
-    component: ComponentCreator('/__docusaurus/debug', '287'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/config',
-    component: ComponentCreator('/__docusaurus/debug/config', 'db8'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/content',
-    component: ComponentCreator('/__docusaurus/debug/content', '5bf'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/globalData',
-    component: ComponentCreator('/__docusaurus/debug/globalData', '3ae'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/metadata',
-    component: ComponentCreator('/__docusaurus/debug/metadata', 'e3d'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/registry',
-    component: ComponentCreator('/__docusaurus/debug/registry', 'c42'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/routes',
-    component: ComponentCreator('/__docusaurus/debug/routes', 'c90'),
-    exact: true
-  },
-  {
-    path: '/docs',
-    component: ComponentCreator('/docs', '958'),
+    path: '/physical-ai-textbook/docs',
+    component: ComponentCreator('/physical-ai-textbook/docs', '709'),
     routes: [
       {
-        path: '/docs',
-        component: ComponentCreator('/docs', '313'),
+        path: '/physical-ai-textbook/docs',
+        component: ComponentCreator('/physical-ai-textbook/docs', 'c94'),
         routes: [
           {
-            path: '/docs',
-            component: ComponentCreator('/docs', 'd84'),
+            path: '/physical-ai-textbook/docs',
+            component: ComponentCreator('/physical-ai-textbook/docs', '6f9'),
             routes: [
               {
-                path: '/docs/intro',
-                component: ComponentCreator('/docs/intro', 'e84'),
+                path: '/physical-ai-textbook/docs/intro',
+                component: ComponentCreator('/physical-ai-textbook/docs/intro', '920'),
                 exact: true
               },
               {
-                path: '/docs/module-0/hardware-stack-jetson-rtx',
-                component: ComponentCreator('/docs/module-0/hardware-stack-jetson-rtx', '0ac'),
+                path: '/physical-ai-textbook/docs/module-0/hardware-stack-jetson-rtx',
+                component: ComponentCreator('/physical-ai-textbook/docs/module-0/hardware-stack-jetson-rtx', 'dff'),
                 exact: true,
                 sidebar: "physaiTextbook"
               },
               {
-                path: '/docs/module-0/humanoid-landscape',
-                component: ComponentCreator('/docs/module-0/humanoid-landscape', '4c7'),
+                path: '/physical-ai-textbook/docs/module-0/humanoid-landscape',
+                component: ComponentCreator('/physical-ai-textbook/docs/module-0/humanoid-landscape', 'be4'),
                 exact: true,
                 sidebar: "physaiTextbook"
               },
               {
-                path: '/docs/module-0/lab-architecture',
-                component: ComponentCreator('/docs/module-0/lab-architecture', '555'),
+                path: '/physical-ai-textbook/docs/module-0/lab-architecture',
+                component: ComponentCreator('/physical-ai-textbook/docs/module-0/lab-architecture', '83a'),
                 exact: true,
                 sidebar: "physaiTextbook"
               },
               {
-                path: '/docs/module-0/physical-ai-concepts',
-                component: ComponentCreator('/docs/module-0/physical-ai-concepts', '6c6'),
+                path: '/physical-ai-textbook/docs/module-0/physical-ai-concepts',
+                component: ComponentCreator('/physical-ai-textbook/docs/module-0/physical-ai-concepts', 'e82'),
                 exact: true,
                 sidebar: "physaiTextbook"
               },
               {
-                path: '/docs/module-1/launch-systems',
-                component: ComponentCreator('/docs/module-1/launch-systems', '5f8'),
+                path: '/physical-ai-textbook/docs/module-1/launch-systems',
+                component: ComponentCreator('/physical-ai-textbook/docs/module-1/launch-systems', '132'),
                 exact: true,
                 sidebar: "physaiTextbook"
               },
               {
-                path: '/docs/module-1/python-rclpy-agents',
-                component: ComponentCreator('/docs/module-1/python-rclpy-agents', 'b9f'),
+                path: '/physical-ai-textbook/docs/module-1/python-rclpy-agents',
+                component: ComponentCreator('/physical-ai-textbook/docs/module-1/python-rclpy-agents', 'd84'),
                 exact: true,
                 sidebar: "physaiTextbook"
               },
               {
-                path: '/docs/module-1/ros2-architecture',
-                component: ComponentCreator('/docs/module-1/ros2-architecture', '0f3'),
+                path: '/physical-ai-textbook/docs/module-1/ros2-architecture',
+                component: ComponentCreator('/physical-ai-textbook/docs/module-1/ros2-architecture', 'ed1'),
                 exact: true,
                 sidebar: "physaiTextbook"
               },
               {
-                path: '/docs/module-1/urdf-robot-description',
-                component: ComponentCreator('/docs/module-1/urdf-robot-description', '004'),
+                path: '/physical-ai-textbook/docs/module-1/urdf-robot-description',
+                component: ComponentCreator('/physical-ai-textbook/docs/module-1/urdf-robot-description', '948'),
                 exact: true,
                 sidebar: "physaiTextbook"
               },
               {
-                path: '/docs/module-2/gazebo-physics',
-                component: ComponentCreator('/docs/module-2/gazebo-physics', '553'),
+                path: '/physical-ai-textbook/docs/module-2/gazebo-physics',
+                component: ComponentCreator('/physical-ai-textbook/docs/module-2/gazebo-physics', '4ea'),
                 exact: true,
                 sidebar: "physaiTextbook"
               },
               {
-                path: '/docs/module-2/sensor-simulation',
-                component: ComponentCreator('/docs/module-2/sensor-simulation', '331'),
+                path: '/physical-ai-textbook/docs/module-2/sensor-simulation',
+                component: ComponentCreator('/physical-ai-textbook/docs/module-2/sensor-simulation', '06f'),
                 exact: true,
                 sidebar: "physaiTextbook"
               },
               {
-                path: '/docs/module-2/unity-visualization',
-                component: ComponentCreator('/docs/module-2/unity-visualization', '2b5'),
+                path: '/physical-ai-textbook/docs/module-2/unity-visualization',
+                component: ComponentCreator('/physical-ai-textbook/docs/module-2/unity-visualization', 'a57'),
                 exact: true,
                 sidebar: "physaiTextbook"
               },
               {
-                path: '/docs/module-2/world-building-sdf',
-                component: ComponentCreator('/docs/module-2/world-building-sdf', 'd20'),
+                path: '/physical-ai-textbook/docs/module-2/world-building-sdf',
+                component: ComponentCreator('/physical-ai-textbook/docs/module-2/world-building-sdf', '1e6'),
                 exact: true,
                 sidebar: "physaiTextbook"
               },
               {
-                path: '/docs/module-3/isaac-sim-intro',
-                component: ComponentCreator('/docs/module-3/isaac-sim-intro', 'b1a'),
+                path: '/physical-ai-textbook/docs/module-3/isaac-sim-intro',
+                component: ComponentCreator('/physical-ai-textbook/docs/module-3/isaac-sim-intro', '556'),
                 exact: true,
                 sidebar: "physaiTextbook"
               },
               {
-                path: '/docs/module-3/nav2-path-planning',
-                component: ComponentCreator('/docs/module-3/nav2-path-planning', '458'),
+                path: '/physical-ai-textbook/docs/module-3/nav2-path-planning',
+                component: ComponentCreator('/physical-ai-textbook/docs/module-3/nav2-path-planning', 'dee'),
                 exact: true,
                 sidebar: "physaiTextbook"
               },
               {
-                path: '/docs/module-3/sim-to-real-transfer',
-                component: ComponentCreator('/docs/module-3/sim-to-real-transfer', '10d'),
+                path: '/physical-ai-textbook/docs/module-3/sim-to-real-transfer',
+                component: ComponentCreator('/physical-ai-textbook/docs/module-3/sim-to-real-transfer', '572'),
                 exact: true,
                 sidebar: "physaiTextbook"
               },
               {
-                path: '/docs/module-3/visual-slam',
-                component: ComponentCreator('/docs/module-3/visual-slam', '590'),
+                path: '/physical-ai-textbook/docs/module-3/visual-slam',
+                component: ComponentCreator('/physical-ai-textbook/docs/module-3/visual-slam', '857'),
                 exact: true,
                 sidebar: "physaiTextbook"
               },
               {
-                path: '/docs/module-4/capstone-pipeline',
-                component: ComponentCreator('/docs/module-4/capstone-pipeline', '52b'),
+                path: '/physical-ai-textbook/docs/module-4/capstone-pipeline',
+                component: ComponentCreator('/physical-ai-textbook/docs/module-4/capstone-pipeline', '029'),
                 exact: true,
                 sidebar: "physaiTextbook"
               },
               {
-                path: '/docs/module-4/humanoid-locomotion',
-                component: ComponentCreator('/docs/module-4/humanoid-locomotion', 'e7c'),
+                path: '/physical-ai-textbook/docs/module-4/humanoid-locomotion',
+                component: ComponentCreator('/physical-ai-textbook/docs/module-4/humanoid-locomotion', '183'),
                 exact: true,
                 sidebar: "physaiTextbook"
               },
               {
-                path: '/docs/module-4/llm-cognitive-planning',
-                component: ComponentCreator('/docs/module-4/llm-cognitive-planning', 'cd4'),
+                path: '/physical-ai-textbook/docs/module-4/llm-cognitive-planning',
+                component: ComponentCreator('/physical-ai-textbook/docs/module-4/llm-cognitive-planning', '2bc'),
                 exact: true,
                 sidebar: "physaiTextbook"
               },
               {
-                path: '/docs/module-4/voice-to-action-whisper',
-                component: ComponentCreator('/docs/module-4/voice-to-action-whisper', '50b'),
+                path: '/physical-ai-textbook/docs/module-4/voice-to-action-whisper',
+                component: ComponentCreator('/physical-ai-textbook/docs/module-4/voice-to-action-whisper', '9f7'),
                 exact: true,
                 sidebar: "physaiTextbook"
               }
@@ -179,6 +144,11 @@ export default [
         ]
       }
     ]
+  },
+  {
+    path: '/physical-ai-textbook/',
+    component: ComponentCreator('/physical-ai-textbook/', '4db'),
+    exact: true
   },
   {
     path: '*',

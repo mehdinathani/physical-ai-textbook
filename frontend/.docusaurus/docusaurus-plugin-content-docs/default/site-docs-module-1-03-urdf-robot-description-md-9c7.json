@@ -5,7 +5,7 @@
   "source": "@site/docs/module-1/03-urdf-robot-description.md",
   "sourceDirName": "module-1",
   "slug": "/module-1/urdf-robot-description",
-  "permalink": "/docs/module-1/urdf-robot-description",
+  "permalink": "/physical-ai-textbook/docs/module-1/urdf-robot-description",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-1/03-urdf-robot-description.md",
@@ -18,10 +18,10 @@
   "sidebar": "physaiTextbook",
   "previous": {
     "title": "Python rclpy Agents",
-    "permalink": "/docs/module-1/python-rclpy-agents"
+    "permalink": "/physical-ai-textbook/docs/module-1/python-rclpy-agents"
   },
   "next": {
     "title": "Launch Systems",
-    "permalink": "/docs/module-1/launch-systems"
+    "permalink": "/physical-ai-textbook/docs/module-1/launch-systems"
   }
 }

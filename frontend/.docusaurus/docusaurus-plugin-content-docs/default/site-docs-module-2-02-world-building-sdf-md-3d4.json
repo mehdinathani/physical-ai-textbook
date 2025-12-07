@@ -5,7 +5,7 @@
   "source": "@site/docs/module-2/02-world-building-sdf.md",
   "sourceDirName": "module-2",
   "slug": "/module-2/world-building-sdf",
-  "permalink": "/docs/module-2/world-building-sdf",
+  "permalink": "/physical-ai-textbook/docs/module-2/world-building-sdf",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-2/02-world-building-sdf.md",
@@ -18,10 +18,10 @@
   "sidebar": "physaiTextbook",
   "previous": {
     "title": "Gazebo Physics",
-    "permalink": "/docs/module-2/gazebo-physics"
+    "permalink": "/physical-ai-textbook/docs/module-2/gazebo-physics"
   },
   "next": {
     "title": "Unity Visualization",
-    "permalink": "/docs/module-2/unity-visualization"
+    "permalink": "/physical-ai-textbook/docs/module-2/unity-visualization"
   }
 }

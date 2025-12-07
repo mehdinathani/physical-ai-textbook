@@ -5,7 +5,7 @@
   "source": "@site/docs/module-0/04-humanoid-landscape.md",
   "sourceDirName": "module-0",
   "slug": "/module-0/humanoid-landscape",
-  "permalink": "/docs/module-0/humanoid-landscape",
+  "permalink": "/physical-ai-textbook/docs/module-0/humanoid-landscape",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-0/04-humanoid-landscape.md",
@@ -18,10 +18,10 @@
   "sidebar": "physaiTextbook",
   "previous": {
     "title": "Lab Architecture",
-    "permalink": "/docs/module-0/lab-architecture"
+    "permalink": "/physical-ai-textbook/docs/module-0/lab-architecture"
   },
   "next": {
     "title": "ROS 2 Architecture",
-    "permalink": "/docs/module-1/ros2-architecture"
+    "permalink": "/physical-ai-textbook/docs/module-1/ros2-architecture"
   }
 }

@@ -16,28 +16,28 @@
           {
             "type": "link",
             "label": "Physical AI Concepts",
-            "href": "/docs/module-0/physical-ai-concepts",
+            "href": "/physical-ai-textbook/docs/module-0/physical-ai-concepts",
             "docId": "module-0/physical-ai-concepts",
             "unlisted": false
           },
           {
             "type": "link",
             "label": "Hardware Stack: Jetson & RTX",
-            "href": "/docs/module-0/hardware-stack-jetson-rtx",
+            "href": "/physical-ai-textbook/docs/module-0/hardware-stack-jetson-rtx",
             "docId": "module-0/hardware-stack-jetson-rtx",
             "unlisted": false
           },
           {
             "type": "link",
             "label": "Lab Architecture",
-            "href": "/docs/module-0/lab-architecture",
+            "href": "/physical-ai-textbook/docs/module-0/lab-architecture",
             "docId": "module-0/lab-architecture",
             "unlisted": false
           },
           {
             "type": "link",
             "label": "Humanoid Robotics Landscape",
-            "href": "/docs/module-0/humanoid-landscape",
+            "href": "/physical-ai-textbook/docs/module-0/humanoid-landscape",
             "docId": "module-0/humanoid-landscape",
             "unlisted": false
           }
@@ -52,28 +52,28 @@
           {
             "type": "link",
             "label": "ROS 2 Architecture",
-            "href": "/docs/module-1/ros2-architecture",
+            "href": "/physical-ai-textbook/docs/module-1/ros2-architecture",
             "docId": "module-1/ros2-architecture",
             "unlisted": false
           },
           {
             "type": "link",
             "label": "Python rclpy Agents",
-            "href": "/docs/module-1/python-rclpy-agents",
+            "href": "/physical-ai-textbook/docs/module-1/python-rclpy-agents",
             "docId": "module-1/python-rclpy-agents",
             "unlisted": false
           },
           {
             "type": "link",
             "label": "URDF Robot Description",
-            "href": "/docs/module-1/urdf-robot-description",
+            "href": "/physical-ai-textbook/docs/module-1/urdf-robot-description",
             "docId": "module-1/urdf-robot-description",
             "unlisted": false
           },
           {
             "type": "link",
             "label": "Launch Systems",
-            "href": "/docs/module-1/launch-systems",
+            "href": "/physical-ai-textbook/docs/module-1/launch-systems",
             "docId": "module-1/launch-systems",
             "unlisted": false
           }
@@ -88,28 +88,28 @@
           {
             "type": "link",
             "label": "Gazebo Physics",
-            "href": "/docs/module-2/gazebo-physics",
+            "href": "/physical-ai-textbook/docs/module-2/gazebo-physics",
             "docId": "module-2/gazebo-physics",
             "unlisted": false
           },
           {
             "type": "link",
             "label": "World Building with SDF",
-            "href": "/docs/module-2/world-building-sdf",
+            "href": "/physical-ai-textbook/docs/module-2/world-building-sdf",
             "docId": "module-2/world-building-sdf",
             "unlisted": false
           },
           {
             "type": "link",
             "label": "Unity Visualization",
-            "href": "/docs/module-2/unity-visualization",
+            "href": "/physical-ai-textbook/docs/module-2/unity-visualization",
             "docId": "module-2/unity-visualization",
             "unlisted": false
           },
           {
             "type": "link",
             "label": "Sensor Simulation",
-            "href": "/docs/module-2/sensor-simulation",
+            "href": "/physical-ai-textbook/docs/module-2/sensor-simulation",
             "docId": "module-2/sensor-simulation",
             "unlisted": false
           }
@@ -124,28 +124,28 @@
           {
             "type": "link",
             "label": "Isaac Sim Introduction",
-            "href": "/docs/module-3/isaac-sim-intro",
+            "href": "/physical-ai-textbook/docs/module-3/isaac-sim-intro",
             "docId": "module-3/isaac-sim-intro",
             "unlisted": false
           },
           {
             "type": "link",
             "label": "Visual SLAM",
-            "href": "/docs/module-3/visual-slam",
+            "href": "/physical-ai-textbook/docs/module-3/visual-slam",
             "docId": "module-3/visual-slam",
             "unlisted": false
           },
           {
             "type": "link",
             "label": "Nav2 Path Planning",
-            "href": "/docs/module-3/nav2-path-planning",
+            "href": "/physical-ai-textbook/docs/module-3/nav2-path-planning",
             "docId": "module-3/nav2-path-planning",
             "unlisted": false
           },
           {
             "type": "link",
             "label": "Sim-to-Real Transfer",
-            "href": "/docs/module-3/sim-to-real-transfer",
+            "href": "/physical-ai-textbook/docs/module-3/sim-to-real-transfer",
             "docId": "module-3/sim-to-real-transfer",
             "unlisted": false
           }
@@ -160,28 +160,28 @@
           {
             "type": "link",
             "label": "Voice to Action with Whisper",
-            "href": "/docs/module-4/voice-to-action-whisper",
+            "href": "/physical-ai-textbook/docs/module-4/voice-to-action-whisper",
             "docId": "module-4/voice-to-action-whisper",
             "unlisted": false
           },
           {
             "type": "link",
             "label": "LLM Cognitive Planning",
-            "href": "/docs/module-4/llm-cognitive-planning",
+            "href": "/physical-ai-textbook/docs/module-4/llm-cognitive-planning",
             "docId": "module-4/llm-cognitive-planning",
             "unlisted": false
           },
           {
             "type": "link",
             "label": "Humanoid Locomotion",
-            "href": "/docs/module-4/humanoid-locomotion",
+            "href": "/physical-ai-textbook/docs/module-4/humanoid-locomotion",
             "docId": "module-4/humanoid-locomotion",
             "unlisted": false
           },
           {
             "type": "link",
             "label": "Capstone Pipeline",
-            "href": "/docs/module-4/capstone-pipeline",
+            "href": "/physical-ai-textbook/docs/module-4/capstone-pipeline",
             "docId": "module-4/capstone-pipeline",
             "unlisted": false
           }

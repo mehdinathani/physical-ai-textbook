@@ -21,7 +21,19 @@
       "Bash(node_modules/.bin/docusaurus start)",
       "Bash(npx docusaurus build)",
       "Bash(npm run clear)",
-      "Bash(git add .)"
+      "Bash(git add .)",
+      "Bash(git commit -m \"Phase 1: Book Structure and Modules 1 & 2\")",
+      "Bash(git remote add origin https://github.com/mehdinathani/physical-ai-textbook)",
+      "Bash(git push -u origin main)",
+      "Bash(git push -u origin master)",
+      "Bash(powershell -ExecutionPolicy Bypass -File .specify/scripts/powershell/check-prerequisites.ps1 -Json -RequireTasks -IncludeTasks)",
+      "Bash(powershell -ExecutionPolicy Bypass -File .specify/scripts/powershell/check-prerequisites.ps1 -Json -RequireTasks -IncludeTasks -FeatureDir \"physai-textbook\")",
+      "Bash(powershell -ExecutionPolicy Bypass -File .specify/scripts/powershell/check-prerequisites.ps1 -Help)",
+      "Bash(powershell -ExecutionPolicy Bypass -File .specify/scripts/powershell/check-prerequisites.ps1 -PathsOnly)",
+      "Bash(npx vercel --version)",
+      "Bash(npx vercel deploy --prod)",
+      "Bash(npx vercel)",
+      "Bash(npx vercel --yes --prod)"
     ],
     "deny": [],
     "ask": []

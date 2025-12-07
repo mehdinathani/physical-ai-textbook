@@ -5,7 +5,7 @@
   "source": "@site/docs/module-3/03-nav2-path-planning.md",
   "sourceDirName": "module-3",
   "slug": "/module-3/nav2-path-planning",
-  "permalink": "/docs/module-3/nav2-path-planning",
+  "permalink": "/physical-ai-textbook/docs/module-3/nav2-path-planning",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-3/03-nav2-path-planning.md",
@@ -18,10 +18,10 @@
   "sidebar": "physaiTextbook",
   "previous": {
     "title": "Visual SLAM",
-    "permalink": "/docs/module-3/visual-slam"
+    "permalink": "/physical-ai-textbook/docs/module-3/visual-slam"
   },
   "next": {
     "title": "Sim-to-Real Transfer",
-    "permalink": "/docs/module-3/sim-to-real-transfer"
+    "permalink": "/physical-ai-textbook/docs/module-3/sim-to-real-transfer"
   }
 }

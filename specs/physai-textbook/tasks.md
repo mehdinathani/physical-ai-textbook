@@ -18,7 +18,7 @@
   - Historical context and evolution
   - Applications and use cases
   - Relationship to embodied cognition
-- **Status:** Pending
+- **Status:** [X] Completed
 - **Acceptance Criteria:**
   - File exists in correct location
   - Proper frontmatter included
@@ -41,7 +41,7 @@
   - Comparison of different hardware options
   - Power and performance considerations
   - Integration with robotic systems
-- **Status:** Pending
+- **Status:** [X] Completed
 - **Acceptance Criteria:**
   - File exists in correct location
   - Proper frontmatter included
@@ -64,7 +64,7 @@
   - Safety considerations
   - Equipment and tools needed
   - Best practices for organization
-- **Status:** Pending
+- **Status:** [X] Completed
 - **Acceptance Criteria:**
   - File exists in correct location
   - Proper frontmatter included
@@ -87,7 +87,7 @@
   - Key challenges and limitations
   - Future directions and trends
   - Ethical considerations
-- **Status:** Pending
+- **Status:** [X] Completed
 - **Acceptance Criteria:**
   - File exists in correct location
   - Proper frontmatter included
@@ -112,7 +112,7 @@
   - DDS implementation and communication
   - Quality of Service (QoS) settings
   - Lifecycle nodes and management
-- **Status:** Pending
+- **Status:** [X] Completed
 - **Acceptance Criteria:**
   - File exists in correct location
   - Proper frontmatter included
@@ -135,7 +135,7 @@
   - Publishers and subscribers
   - Services and clients
   - Action servers and clients
-- **Status:** Pending
+- **Status:** [X] Completed
 - **Acceptance Criteria:**
   - File exists in correct location
   - Proper frontmatter included
@@ -158,7 +158,7 @@
   - Visual and collision properties
   - Materials and colors
   - Xacro for complex robots
-- **Status:** Pending
+- **Status:** [X] Completed
 - **Acceptance Criteria:**
   - File exists in correct location
   - Proper frontmatter included
@@ -181,7 +181,7 @@
   - Parameter management
   - Conditional launching
   - Debugging launch files
-- **Status:** Pending
+- **Status:** [X] Completed
 - **Acceptance Criteria:**
   - File exists in correct location
   - Proper frontmatter included
@@ -206,7 +206,7 @@
   - Material properties and friction
   - Collision detection
   - Performance optimization
-- **Status:** Pending
+- **Status:** [X] Completed
 - **Acceptance Criteria:**
   - File exists in correct location
   - Proper frontmatter included
@@ -229,7 +229,7 @@
   - Lighting and atmospheric effects
   - Importing 3D models
   - World composition best practices
-- **Status:** Pending
+- **Status:** [X] Completed
 - **Acceptance Criteria:**
   - File exists in correct location
   - Proper frontmatter included
@@ -252,7 +252,7 @@
   - Real-time rendering
   - Camera systems and viewpoints
   - Performance considerations
-- **Status:** Pending
+- **Status:** [X] Completed
 - **Acceptance Criteria:**
   - File exists in correct location
   - Proper frontmatter included
@@ -275,7 +275,7 @@
   - IMU and other sensor types
   - Noise modeling
   - Data processing pipelines
-- **Status:** Pending
+- **Status:** [X] Completed
 - **Acceptance Criteria:**
   - File exists in correct location
   - Proper frontmatter included
@@ -300,7 +300,7 @@
   - Integration with robotics workflows
   - Key features and tools
   - Getting started guide
-- **Status:** Pending
+- **Status:** [X] Completed
 - **Acceptance Criteria:**
   - File exists in correct location
   - Proper frontmatter included
@@ -323,7 +323,7 @@
   - Feature detection and matching
   - Loop closure and mapping
   - Performance considerations
-- **Status:** Pending
+- **Status:** [X] Completed
 - **Acceptance Criteria:**
   - File exists in correct location
   - Proper frontmatter included
@@ -346,7 +346,7 @@
   - Costmap configuration
   - Behavior trees for navigation
   - Recovery behaviors
-- **Status:** Pending
+- **Status:** [X] Completed
 - **Acceptance Criteria:**
   - File exists in correct location
   - Proper frontmatter included
@@ -369,7 +369,7 @@
   - Transfer learning approaches
   - Validation methodologies
   - Case studies and examples
-- **Status:** Pending
+- **Status:** [X] Completed
 - **Acceptance Criteria:**
   - File exists in correct location
   - Proper frontmatter included
@@ -394,7 +394,7 @@
   - Command parsing and interpretation
   - Integration with robotic actions
   - Accuracy and reliability considerations
-- **Status:** Pending
+- **Status:** [X] Completed
 - **Acceptance Criteria:**
   - File exists in correct location
   - Proper frontmatter included
@@ -417,7 +417,7 @@
   - Context awareness and memory
   - Multi-step task decomposition
   - Safety and reliability considerations
-- **Status:** Pending
+- **Status:** [X] Completed
 - **Acceptance Criteria:**
   - File exists in correct location
   - Proper frontmatter included
@@ -440,7 +440,7 @@
   - Walking pattern generation
   - Terrain adaptation
   - Motion planning for humanoids
-- **Status:** Pending
+- **Status:** [X] Completed
 - **Acceptance Criteria:**
   - File exists in correct location
   - Proper frontmatter included
@@ -463,7 +463,7 @@
   - System architecture overview
   - Testing and validation strategies
   - Future extensions and improvements
-- **Status:** Pending
+- **Status:** [X] Completed
 - **Acceptance Criteria:**
   - File exists in correct location
   - Proper frontmatter included
@@ -475,7 +475,7 @@
 ### Task C.1: Update Sidebars Configuration
 - **File:** `frontend/sidebars.js` or `frontend/src/components/Sidebars.js`
 - **Description:** Update the sidebar configuration to include all modules and documents
-- **Status:** Pending
+- **Status:** [X] Completed
 - **Acceptance Criteria:**
   - All modules are properly organized in the sidebar
   - Correct positioning and hierarchy maintained
@@ -484,7 +484,7 @@
 
 ### Task C.2: Verify Docusaurus Build
 - **Description:** Test the Docusaurus build to ensure all documents are properly integrated
-- **Status:** Pending
+- **Status:** [X] Completed
 - **Acceptance Criteria:**
   - `npm run build` completes without errors
   - All documents are accessible via the sidebar

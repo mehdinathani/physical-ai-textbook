@@ -1,117 +1,117 @@
 {
   "docusaurus-plugin-content-docs": {
     "default": {
-      "path": "/docs",
+      "path": "/physical-ai-textbook/docs",
       "versions": [
         {
           "name": "current",
           "label": "Next",
           "isLast": true,
-          "path": "/docs",
+          "path": "/physical-ai-textbook/docs",
           "mainDocId": "module-0/physical-ai-concepts",
           "docs": [
             {
               "id": "intro",
-              "path": "/docs/intro"
+              "path": "/physical-ai-textbook/docs/intro"
             },
             {
               "id": "module-0/hardware-stack-jetson-rtx",
-              "path": "/docs/module-0/hardware-stack-jetson-rtx",
+              "path": "/physical-ai-textbook/docs/module-0/hardware-stack-jetson-rtx",
               "sidebar": "physaiTextbook"
             },
             {
               "id": "module-0/humanoid-landscape",
-              "path": "/docs/module-0/humanoid-landscape",
+              "path": "/physical-ai-textbook/docs/module-0/humanoid-landscape",
               "sidebar": "physaiTextbook"
             },
             {
               "id": "module-0/lab-architecture",
-              "path": "/docs/module-0/lab-architecture",
+              "path": "/physical-ai-textbook/docs/module-0/lab-architecture",
               "sidebar": "physaiTextbook"
             },
             {
               "id": "module-0/physical-ai-concepts",
-              "path": "/docs/module-0/physical-ai-concepts",
+              "path": "/physical-ai-textbook/docs/module-0/physical-ai-concepts",
               "sidebar": "physaiTextbook"
             },
             {
               "id": "module-1/launch-systems",
-              "path": "/docs/module-1/launch-systems",
+              "path": "/physical-ai-textbook/docs/module-1/launch-systems",
               "sidebar": "physaiTextbook"
             },
             {
               "id": "module-1/python-rclpy-agents",
-              "path": "/docs/module-1/python-rclpy-agents",
+              "path": "/physical-ai-textbook/docs/module-1/python-rclpy-agents",
               "sidebar": "physaiTextbook"
             },
             {
               "id": "module-1/ros2-architecture",
-              "path": "/docs/module-1/ros2-architecture",
+              "path": "/physical-ai-textbook/docs/module-1/ros2-architecture",
               "sidebar": "physaiTextbook"
             },
             {
               "id": "module-1/urdf-robot-description",
-              "path": "/docs/module-1/urdf-robot-description",
+              "path": "/physical-ai-textbook/docs/module-1/urdf-robot-description",
               "sidebar": "physaiTextbook"
             },
             {
               "id": "module-2/gazebo-physics",
-              "path": "/docs/module-2/gazebo-physics",
+              "path": "/physical-ai-textbook/docs/module-2/gazebo-physics",
               "sidebar": "physaiTextbook"
             },
             {
               "id": "module-2/sensor-simulation",
-              "path": "/docs/module-2/sensor-simulation",
+              "path": "/physical-ai-textbook/docs/module-2/sensor-simulation",
               "sidebar": "physaiTextbook"
             },
             {
               "id": "module-2/unity-visualization",
-              "path": "/docs/module-2/unity-visualization",
+              "path": "/physical-ai-textbook/docs/module-2/unity-visualization",
               "sidebar": "physaiTextbook"
             },
             {
               "id": "module-2/world-building-sdf",
-              "path": "/docs/module-2/world-building-sdf",
+              "path": "/physical-ai-textbook/docs/module-2/world-building-sdf",
               "sidebar": "physaiTextbook"
             },
             {
               "id": "module-3/isaac-sim-intro",
-              "path": "/docs/module-3/isaac-sim-intro",
+              "path": "/physical-ai-textbook/docs/module-3/isaac-sim-intro",
               "sidebar": "physaiTextbook"
             },
             {
               "id": "module-3/nav2-path-planning",
-              "path": "/docs/module-3/nav2-path-planning",
+              "path": "/physical-ai-textbook/docs/module-3/nav2-path-planning",
               "sidebar": "physaiTextbook"
             },
             {
               "id": "module-3/sim-to-real-transfer",
-              "path": "/docs/module-3/sim-to-real-transfer",
+              "path": "/physical-ai-textbook/docs/module-3/sim-to-real-transfer",
               "sidebar": "physaiTextbook"
             },
             {
               "id": "module-3/visual-slam",
-              "path": "/docs/module-3/visual-slam",
+              "path": "/physical-ai-textbook/docs/module-3/visual-slam",
               "sidebar": "physaiTextbook"
             },
             {
               "id": "module-4/capstone-pipeline",
-              "path": "/docs/module-4/capstone-pipeline",
+              "path": "/physical-ai-textbook/docs/module-4/capstone-pipeline",
               "sidebar": "physaiTextbook"
             },
             {
               "id": "module-4/humanoid-locomotion",
-              "path": "/docs/module-4/humanoid-locomotion",
+              "path": "/physical-ai-textbook/docs/module-4/humanoid-locomotion",
               "sidebar": "physaiTextbook"
             },
             {
               "id": "module-4/llm-cognitive-planning",
-              "path": "/docs/module-4/llm-cognitive-planning",
+              "path": "/physical-ai-textbook/docs/module-4/llm-cognitive-planning",
               "sidebar": "physaiTextbook"
             },
             {
               "id": "module-4/voice-to-action-whisper",
-              "path": "/docs/module-4/voice-to-action-whisper",
+              "path": "/physical-ai-textbook/docs/module-4/voice-to-action-whisper",
               "sidebar": "physaiTextbook"
             }
           ],
@@ -119,7 +119,7 @@
           "sidebars": {
             "physaiTextbook": {
               "link": {
-                "path": "/docs/module-0/physical-ai-concepts",
+                "path": "/physical-ai-textbook/docs/module-0/physical-ai-concepts",
                 "label": "module-0/physical-ai-concepts"
               }
             }

@@ -5,7 +5,7 @@
   "source": "@site/docs/module-1/02-python-rclpy-agents.md",
   "sourceDirName": "module-1",
   "slug": "/module-1/python-rclpy-agents",
-  "permalink": "/docs/module-1/python-rclpy-agents",
+  "permalink": "/physical-ai-textbook/docs/module-1/python-rclpy-agents",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-1/02-python-rclpy-agents.md",
@@ -18,10 +18,10 @@
   "sidebar": "physaiTextbook",
   "previous": {
     "title": "ROS 2 Architecture",
-    "permalink": "/docs/module-1/ros2-architecture"
+    "permalink": "/physical-ai-textbook/docs/module-1/ros2-architecture"
   },
   "next": {
     "title": "URDF Robot Description",
-    "permalink": "/docs/module-1/urdf-robot-description"
+    "permalink": "/physical-ai-textbook/docs/module-1/urdf-robot-description"
   }
 }
