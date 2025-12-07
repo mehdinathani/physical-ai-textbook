@@ -1,3 +1,0 @@
-# Disable Jekyll processing for GitHub Pages
-# This allows Docusaurus static files to be served properly
-jekyll-theme: null
