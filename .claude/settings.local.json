@@ -52,7 +52,19 @@
       "Bash(dir .gitignore)",
       "Bash(dir frontend)",
       "Bash(findstr package)",
-      "Bash(git add .claude/settings.local.json frontend/docusaurus.config.ts .github/workflows/deploy.yml history/prompts/physai-foundations/)"
+      "Bash(git add .claude/settings.local.json frontend/docusaurus.config.ts .github/workflows/deploy.yml history/prompts/physai-foundations/)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nFix: Configure GitHub Pages baseUrl and Actions\n\n- Add trailingSlash: false to Docusaurus config\n- Configure GitHub Actions workflow for deployment to GitHub Pages\n- Update workflow to build from frontend directory\n- Add proper deployment configuration with peaceiris/actions-gh-pages\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push origin main)",
+      "Bash(git add .nojekyll)",
+      "Bash(git add .github/workflows/deploy.yml)",
+      "Bash(git commit -m \"Update GitHub Pages workflow to deploy to docs folder for GitHub Pages\")",
+      "Bash(dir docs)",
+      "Bash(git add docs/_config.yml)",
+      "Bash(git commit -m \"Configure GitHub Pages to disable Jekyll processing\" --amend)",
+      "Bash(dir frontenddocs)",
+      "Bash(dir \"frontend\\docs\")",
+      "Bash(git commit -m \"Add GitHub Pages configuration to disable Jekyll processing\")",
+      "Bash(git add -A)"
     ],
     "deny": [],
     "ask": []
