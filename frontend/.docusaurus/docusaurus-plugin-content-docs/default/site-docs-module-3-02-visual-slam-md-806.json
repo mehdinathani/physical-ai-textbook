@@ -1,0 +1,27 @@
+{
+  "id": "module-3/visual-slam",
+  "title": "Visual SLAM",
+  "description": "Introduction",
+  "source": "@site/docs/module-3/02-visual-slam.md",
+  "sourceDirName": "module-3",
+  "slug": "/module-3/visual-slam",
+  "permalink": "/docs/module-3/visual-slam",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-3/02-visual-slam.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "physaiTextbook",
+  "previous": {
+    "title": "Isaac Sim Introduction",
+    "permalink": "/docs/module-3/isaac-sim-intro"
+  },
+  "next": {
+    "title": "Nav2 Path Planning",
+    "permalink": "/docs/module-3/nav2-path-planning"
+  }
+}

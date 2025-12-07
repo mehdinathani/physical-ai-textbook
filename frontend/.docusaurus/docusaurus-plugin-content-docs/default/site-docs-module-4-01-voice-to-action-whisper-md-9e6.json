@@ -1,0 +1,27 @@
+{
+  "id": "module-4/voice-to-action-whisper",
+  "title": "Voice to Action with Whisper",
+  "description": "Introduction",
+  "source": "@site/docs/module-4/01-voice-to-action-whisper.md",
+  "sourceDirName": "module-4",
+  "slug": "/module-4/voice-to-action-whisper",
+  "permalink": "/docs/module-4/voice-to-action-whisper",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-4/01-voice-to-action-whisper.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "physaiTextbook",
+  "previous": {
+    "title": "Sim-to-Real Transfer",
+    "permalink": "/docs/module-3/sim-to-real-transfer"
+  },
+  "next": {
+    "title": "LLM Cognitive Planning",
+    "permalink": "/docs/module-4/llm-cognitive-planning"
+  }
+}

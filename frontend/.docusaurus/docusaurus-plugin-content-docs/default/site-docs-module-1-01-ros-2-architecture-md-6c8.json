@@ -1,0 +1,27 @@
+{
+  "id": "module-1/ros2-architecture",
+  "title": "ROS 2 Architecture",
+  "description": "Introduction",
+  "source": "@site/docs/module-1/01-ros2-architecture.md",
+  "sourceDirName": "module-1",
+  "slug": "/module-1/ros2-architecture",
+  "permalink": "/docs/module-1/ros2-architecture",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-1/01-ros2-architecture.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "physaiTextbook",
+  "previous": {
+    "title": "Humanoid Robotics Landscape",
+    "permalink": "/docs/module-0/humanoid-landscape"
+  },
+  "next": {
+    "title": "Python rclpy Agents",
+    "permalink": "/docs/module-1/python-rclpy-agents"
+  }
+}

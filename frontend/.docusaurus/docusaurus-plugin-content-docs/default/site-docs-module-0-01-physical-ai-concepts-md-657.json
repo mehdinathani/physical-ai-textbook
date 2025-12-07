@@ -1,0 +1,23 @@
+{
+  "id": "module-0/physical-ai-concepts",
+  "title": "Physical AI Concepts",
+  "description": "Introduction",
+  "source": "@site/docs/module-0/01-physical-ai-concepts.md",
+  "sourceDirName": "module-0",
+  "slug": "/module-0/physical-ai-concepts",
+  "permalink": "/docs/module-0/physical-ai-concepts",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-0/01-physical-ai-concepts.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "physaiTextbook",
+  "next": {
+    "title": "Hardware Stack: Jetson & RTX",
+    "permalink": "/docs/module-0/hardware-stack-jetson-rtx"
+  }
+}

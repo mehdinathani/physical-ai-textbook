@@ -1,0 +1,27 @@
+{
+  "id": "module-3/nav2-path-planning",
+  "title": "Nav2 Path Planning",
+  "description": "Introduction",
+  "source": "@site/docs/module-3/03-nav2-path-planning.md",
+  "sourceDirName": "module-3",
+  "slug": "/module-3/nav2-path-planning",
+  "permalink": "/docs/module-3/nav2-path-planning",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-3/03-nav2-path-planning.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "physaiTextbook",
+  "previous": {
+    "title": "Visual SLAM",
+    "permalink": "/docs/module-3/visual-slam"
+  },
+  "next": {
+    "title": "Sim-to-Real Transfer",
+    "permalink": "/docs/module-3/sim-to-real-transfer"
+  }
+}

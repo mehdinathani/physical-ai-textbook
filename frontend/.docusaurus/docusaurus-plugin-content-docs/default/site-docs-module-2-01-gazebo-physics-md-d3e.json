@@ -1,0 +1,27 @@
+{
+  "id": "module-2/gazebo-physics",
+  "title": "Gazebo Physics",
+  "description": "Introduction",
+  "source": "@site/docs/module-2/01-gazebo-physics.md",
+  "sourceDirName": "module-2",
+  "slug": "/module-2/gazebo-physics",
+  "permalink": "/docs/module-2/gazebo-physics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-2/01-gazebo-physics.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "physaiTextbook",
+  "previous": {
+    "title": "Launch Systems",
+    "permalink": "/docs/module-1/launch-systems"
+  },
+  "next": {
+    "title": "World Building with SDF",
+    "permalink": "/docs/module-2/world-building-sdf"
+  }
+}

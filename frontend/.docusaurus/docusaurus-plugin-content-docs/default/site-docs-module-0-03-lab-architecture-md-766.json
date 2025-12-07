@@ -1,0 +1,27 @@
+{
+  "id": "module-0/lab-architecture",
+  "title": "Lab Architecture",
+  "description": "Introduction",
+  "source": "@site/docs/module-0/03-lab-architecture.md",
+  "sourceDirName": "module-0",
+  "slug": "/module-0/lab-architecture",
+  "permalink": "/docs/module-0/lab-architecture",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-0/03-lab-architecture.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "physaiTextbook",
+  "previous": {
+    "title": "Hardware Stack: Jetson & RTX",
+    "permalink": "/docs/module-0/hardware-stack-jetson-rtx"
+  },
+  "next": {
+    "title": "Humanoid Robotics Landscape",
+    "permalink": "/docs/module-0/humanoid-landscape"
+  }
+}

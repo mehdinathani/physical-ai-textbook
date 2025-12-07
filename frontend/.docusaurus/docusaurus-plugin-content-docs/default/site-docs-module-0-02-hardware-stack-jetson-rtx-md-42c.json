@@ -1,0 +1,27 @@
+{
+  "id": "module-0/hardware-stack-jetson-rtx",
+  "title": "Hardware Stack: Jetson & RTX",
+  "description": "Introduction",
+  "source": "@site/docs/module-0/02-hardware-stack-jetson-rtx.md",
+  "sourceDirName": "module-0",
+  "slug": "/module-0/hardware-stack-jetson-rtx",
+  "permalink": "/docs/module-0/hardware-stack-jetson-rtx",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-0/02-hardware-stack-jetson-rtx.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "physaiTextbook",
+  "previous": {
+    "title": "Physical AI Concepts",
+    "permalink": "/docs/module-0/physical-ai-concepts"
+  },
+  "next": {
+    "title": "Lab Architecture",
+    "permalink": "/docs/module-0/lab-architecture"
+  }
+}

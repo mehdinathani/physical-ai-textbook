@@ -1,0 +1,27 @@
+{
+  "id": "module-3/sim-to-real-transfer",
+  "title": "Sim-to-Real Transfer",
+  "description": "Introduction",
+  "source": "@site/docs/module-3/04-sim-to-real-transfer.md",
+  "sourceDirName": "module-3",
+  "slug": "/module-3/sim-to-real-transfer",
+  "permalink": "/docs/module-3/sim-to-real-transfer",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-3/04-sim-to-real-transfer.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4
+  },
+  "sidebar": "physaiTextbook",
+  "previous": {
+    "title": "Nav2 Path Planning",
+    "permalink": "/docs/module-3/nav2-path-planning"
+  },
+  "next": {
+    "title": "Voice to Action with Whisper",
+    "permalink": "/docs/module-4/voice-to-action-whisper"
+  }
+}

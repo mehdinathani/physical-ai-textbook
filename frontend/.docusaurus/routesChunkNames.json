@@ -1,0 +1,142 @@
+{
+  "/__docusaurus/debug-287": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docusaurus-debug-5-fa-941"
+    }
+  },
+  "/__docusaurus/debug/config-db8": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docusaurus-debug-5-fa-941"
+    }
+  },
+  "/__docusaurus/debug/content-5bf": {
+    "__comp": "__comp---theme-debug-contentba-8-ce7",
+    "__context": {
+      "plugin": "plugin---docusaurus-debug-5-fa-941"
+    },
+    "allContent": "allContent---docusaurus-debug-content-246-9aa"
+  },
+  "/__docusaurus/debug/globalData-3ae": {
+    "__comp": "__comp---theme-debug-global-dataede-0fa",
+    "__context": {
+      "plugin": "plugin---docusaurus-debug-5-fa-941"
+    }
+  },
+  "/__docusaurus/debug/metadata-e3d": {
+    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
+    "__context": {
+      "plugin": "plugin---docusaurus-debug-5-fa-941"
+    }
+  },
+  "/__docusaurus/debug/registry-c42": {
+    "__comp": "__comp---theme-debug-registry-679-501",
+    "__context": {
+      "plugin": "plugin---docusaurus-debug-5-fa-941"
+    }
+  },
+  "/__docusaurus/debug/routes-c90": {
+    "__comp": "__comp---theme-debug-routes-946-699",
+    "__context": {
+      "plugin": "plugin---docusaurus-debug-5-fa-941"
+    }
+  },
+  "/docs-958": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+    "__context": {
+      "plugin": "plugin---docs-5-b-9-0e4"
+    }
+  },
+  "/docs-313": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "version": "version---docs-935-398"
+  },
+  "/docs-d84": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
+  },
+  "/docs/intro-e84": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-intro-0-e-3-be1"
+  },
+  "/docs/module-0/hardware-stack-jetson-rtx-0ac": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-0-hardware-stack-jetson-rtx-42-c-e3e"
+  },
+  "/docs/module-0/humanoid-landscape-4c7": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-0-humanoid-landscape-058-dbd"
+  },
+  "/docs/module-0/lab-architecture-555": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-0-lab-architecture-766-ce7"
+  },
+  "/docs/module-0/physical-ai-concepts-6c6": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-0-physical-ai-concepts-657-a2d"
+  },
+  "/docs/module-1/launch-systems-5f8": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-1-launch-systems-3-a-6-6c3"
+  },
+  "/docs/module-1/python-rclpy-agents-b9f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-1-python-rclpy-agentsecb-e72"
+  },
+  "/docs/module-1/ros2-architecture-0f3": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-1-ros-2-architecture-6-c-8-6fe"
+  },
+  "/docs/module-1/urdf-robot-description-004": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-1-urdf-robot-description-9-c-7-998"
+  },
+  "/docs/module-2/gazebo-physics-553": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-2-gazebo-physicsd-3-e-41b"
+  },
+  "/docs/module-2/sensor-simulation-331": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-2-sensor-simulation-6-fa-f3b"
+  },
+  "/docs/module-2/unity-visualization-2b5": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-2-unity-visualization-588-3a2"
+  },
+  "/docs/module-2/world-building-sdf-d20": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-2-world-building-sdf-3-d-4-55e"
+  },
+  "/docs/module-3/isaac-sim-intro-b1a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-3-isaac-sim-intro-75-e-9ff"
+  },
+  "/docs/module-3/nav2-path-planning-458": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-3-nav-2-path-planningbbf-2c8"
+  },
+  "/docs/module-3/sim-to-real-transfer-10d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-3-sim-to-real-transferd-85-c5b"
+  },
+  "/docs/module-3/visual-slam-590": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-3-visual-slam-806-e0e"
+  },
+  "/docs/module-4/capstone-pipeline-52b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-4-capstone-pipeline-459-dd6"
+  },
+  "/docs/module-4/humanoid-locomotion-e7c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-4-humanoid-locomotion-109-bee"
+  },
+  "/docs/module-4/llm-cognitive-planning-cd4": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-4-llm-cognitive-planning-73-c-ee0"
+  },
+  "/docs/module-4/voice-to-action-whisper-50b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-module-4-voice-to-action-whisper-9-e-6-971"
+  }
+}

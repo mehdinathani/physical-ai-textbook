@@ -1,0 +1,709 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "loadedVersions": [
+        {
+          "versionName": "current",
+          "label": "Next",
+          "banner": null,
+          "badge": false,
+          "noIndex": false,
+          "className": "docs-version-current",
+          "path": "/docs",
+          "tagsPath": "/docs/tags",
+          "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs",
+          "editUrlLocalized": "https://github.com/physai-foundations/physai-foundations/tree/main/i18n/en/docusaurus-plugin-content-docs/current",
+          "isLast": true,
+          "routePriority": -1,
+          "sidebarFilePath": "C:\\mehdibackup\\GIAIC\\Q4\\HACKATHON1\\physai-foundations\\frontend\\sidebars.ts",
+          "contentPath": "C:\\mehdibackup\\GIAIC\\Q4\\HACKATHON1\\physai-foundations\\frontend\\docs",
+          "contentPathLocalized": "C:\\mehdibackup\\GIAIC\\Q4\\HACKATHON1\\physai-foundations\\frontend\\i18n\\en\\docusaurus-plugin-content-docs\\current",
+          "docs": [
+            {
+              "id": "intro",
+              "title": "Physical AI & Humanoid Robotics Textbook",
+              "description": "Welcome to the comprehensive textbook on Physical AI and Humanoid Robotics. This resource covers the complete technology stack from foundational concepts to advanced implementation.",
+              "source": "@site/docs/intro.md",
+              "sourceDirName": ".",
+              "slug": "/intro",
+              "permalink": "/docs/intro",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/intro.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1
+              }
+            },
+            {
+              "id": "module-0/hardware-stack-jetson-rtx",
+              "title": "Hardware Stack: Jetson & RTX",
+              "description": "Introduction",
+              "source": "@site/docs/module-0/02-hardware-stack-jetson-rtx.md",
+              "sourceDirName": "module-0",
+              "slug": "/module-0/hardware-stack-jetson-rtx",
+              "permalink": "/docs/module-0/hardware-stack-jetson-rtx",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-0/02-hardware-stack-jetson-rtx.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "sidebar_position": 2
+              },
+              "sidebar": "physaiTextbook",
+              "previous": {
+                "title": "Physical AI Concepts",
+                "permalink": "/docs/module-0/physical-ai-concepts"
+              },
+              "next": {
+                "title": "Lab Architecture",
+                "permalink": "/docs/module-0/lab-architecture"
+              }
+            },
+            {
+              "id": "module-0/humanoid-landscape",
+              "title": "Humanoid Robotics Landscape",
+              "description": "Introduction",
+              "source": "@site/docs/module-0/04-humanoid-landscape.md",
+              "sourceDirName": "module-0",
+              "slug": "/module-0/humanoid-landscape",
+              "permalink": "/docs/module-0/humanoid-landscape",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-0/04-humanoid-landscape.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 4,
+              "frontMatter": {
+                "sidebar_position": 4
+              },
+              "sidebar": "physaiTextbook",
+              "previous": {
+                "title": "Lab Architecture",
+                "permalink": "/docs/module-0/lab-architecture"
+              },
+              "next": {
+                "title": "ROS 2 Architecture",
+                "permalink": "/docs/module-1/ros2-architecture"
+              }
+            },
+            {
+              "id": "module-0/lab-architecture",
+              "title": "Lab Architecture",
+              "description": "Introduction",
+              "source": "@site/docs/module-0/03-lab-architecture.md",
+              "sourceDirName": "module-0",
+              "slug": "/module-0/lab-architecture",
+              "permalink": "/docs/module-0/lab-architecture",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-0/03-lab-architecture.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 3,
+              "frontMatter": {
+                "sidebar_position": 3
+              },
+              "sidebar": "physaiTextbook",
+              "previous": {
+                "title": "Hardware Stack: Jetson & RTX",
+                "permalink": "/docs/module-0/hardware-stack-jetson-rtx"
+              },
+              "next": {
+                "title": "Humanoid Robotics Landscape",
+                "permalink": "/docs/module-0/humanoid-landscape"
+              }
+            },
+            {
+              "id": "module-0/physical-ai-concepts",
+              "title": "Physical AI Concepts",
+              "description": "Introduction",
+              "source": "@site/docs/module-0/01-physical-ai-concepts.md",
+              "sourceDirName": "module-0",
+              "slug": "/module-0/physical-ai-concepts",
+              "permalink": "/docs/module-0/physical-ai-concepts",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-0/01-physical-ai-concepts.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1
+              },
+              "sidebar": "physaiTextbook",
+              "next": {
+                "title": "Hardware Stack: Jetson & RTX",
+                "permalink": "/docs/module-0/hardware-stack-jetson-rtx"
+              }
+            },
+            {
+              "id": "module-1/launch-systems",
+              "title": "Launch Systems",
+              "description": "Introduction",
+              "source": "@site/docs/module-1/04-launch-systems.md",
+              "sourceDirName": "module-1",
+              "slug": "/module-1/launch-systems",
+              "permalink": "/docs/module-1/launch-systems",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-1/04-launch-systems.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 4,
+              "frontMatter": {
+                "sidebar_position": 4
+              },
+              "sidebar": "physaiTextbook",
+              "previous": {
+                "title": "URDF Robot Description",
+                "permalink": "/docs/module-1/urdf-robot-description"
+              },
+              "next": {
+                "title": "Gazebo Physics",
+                "permalink": "/docs/module-2/gazebo-physics"
+              }
+            },
+            {
+              "id": "module-1/python-rclpy-agents",
+              "title": "Python rclpy Agents",
+              "description": "Introduction",
+              "source": "@site/docs/module-1/02-python-rclpy-agents.md",
+              "sourceDirName": "module-1",
+              "slug": "/module-1/python-rclpy-agents",
+              "permalink": "/docs/module-1/python-rclpy-agents",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-1/02-python-rclpy-agents.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "sidebar_position": 2
+              },
+              "sidebar": "physaiTextbook",
+              "previous": {
+                "title": "ROS 2 Architecture",
+                "permalink": "/docs/module-1/ros2-architecture"
+              },
+              "next": {
+                "title": "URDF Robot Description",
+                "permalink": "/docs/module-1/urdf-robot-description"
+              }
+            },
+            {
+              "id": "module-1/ros2-architecture",
+              "title": "ROS 2 Architecture",
+              "description": "Introduction",
+              "source": "@site/docs/module-1/01-ros2-architecture.md",
+              "sourceDirName": "module-1",
+              "slug": "/module-1/ros2-architecture",
+              "permalink": "/docs/module-1/ros2-architecture",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-1/01-ros2-architecture.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1
+              },
+              "sidebar": "physaiTextbook",
+              "previous": {
+                "title": "Humanoid Robotics Landscape",
+                "permalink": "/docs/module-0/humanoid-landscape"
+              },
+              "next": {
+                "title": "Python rclpy Agents",
+                "permalink": "/docs/module-1/python-rclpy-agents"
+              }
+            },
+            {
+              "id": "module-1/urdf-robot-description",
+              "title": "URDF Robot Description",
+              "description": "Introduction",
+              "source": "@site/docs/module-1/03-urdf-robot-description.md",
+              "sourceDirName": "module-1",
+              "slug": "/module-1/urdf-robot-description",
+              "permalink": "/docs/module-1/urdf-robot-description",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-1/03-urdf-robot-description.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 3,
+              "frontMatter": {
+                "sidebar_position": 3
+              },
+              "sidebar": "physaiTextbook",
+              "previous": {
+                "title": "Python rclpy Agents",
+                "permalink": "/docs/module-1/python-rclpy-agents"
+              },
+              "next": {
+                "title": "Launch Systems",
+                "permalink": "/docs/module-1/launch-systems"
+              }
+            },
+            {
+              "id": "module-2/gazebo-physics",
+              "title": "Gazebo Physics",
+              "description": "Introduction",
+              "source": "@site/docs/module-2/01-gazebo-physics.md",
+              "sourceDirName": "module-2",
+              "slug": "/module-2/gazebo-physics",
+              "permalink": "/docs/module-2/gazebo-physics",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-2/01-gazebo-physics.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1
+              },
+              "sidebar": "physaiTextbook",
+              "previous": {
+                "title": "Launch Systems",
+                "permalink": "/docs/module-1/launch-systems"
+              },
+              "next": {
+                "title": "World Building with SDF",
+                "permalink": "/docs/module-2/world-building-sdf"
+              }
+            },
+            {
+              "id": "module-2/sensor-simulation",
+              "title": "Sensor Simulation",
+              "description": "Introduction",
+              "source": "@site/docs/module-2/04-sensor-simulation.md",
+              "sourceDirName": "module-2",
+              "slug": "/module-2/sensor-simulation",
+              "permalink": "/docs/module-2/sensor-simulation",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-2/04-sensor-simulation.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 4,
+              "frontMatter": {
+                "sidebar_position": 4
+              },
+              "sidebar": "physaiTextbook",
+              "previous": {
+                "title": "Unity Visualization",
+                "permalink": "/docs/module-2/unity-visualization"
+              },
+              "next": {
+                "title": "Isaac Sim Introduction",
+                "permalink": "/docs/module-3/isaac-sim-intro"
+              }
+            },
+            {
+              "id": "module-2/unity-visualization",
+              "title": "Unity Visualization",
+              "description": "Introduction",
+              "source": "@site/docs/module-2/03-unity-visualization.md",
+              "sourceDirName": "module-2",
+              "slug": "/module-2/unity-visualization",
+              "permalink": "/docs/module-2/unity-visualization",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-2/03-unity-visualization.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 3,
+              "frontMatter": {
+                "sidebar_position": 3
+              },
+              "sidebar": "physaiTextbook",
+              "previous": {
+                "title": "World Building with SDF",
+                "permalink": "/docs/module-2/world-building-sdf"
+              },
+              "next": {
+                "title": "Sensor Simulation",
+                "permalink": "/docs/module-2/sensor-simulation"
+              }
+            },
+            {
+              "id": "module-2/world-building-sdf",
+              "title": "World Building with SDF",
+              "description": "Introduction",
+              "source": "@site/docs/module-2/02-world-building-sdf.md",
+              "sourceDirName": "module-2",
+              "slug": "/module-2/world-building-sdf",
+              "permalink": "/docs/module-2/world-building-sdf",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-2/02-world-building-sdf.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "sidebar_position": 2
+              },
+              "sidebar": "physaiTextbook",
+              "previous": {
+                "title": "Gazebo Physics",
+                "permalink": "/docs/module-2/gazebo-physics"
+              },
+              "next": {
+                "title": "Unity Visualization",
+                "permalink": "/docs/module-2/unity-visualization"
+              }
+            },
+            {
+              "id": "module-3/isaac-sim-intro",
+              "title": "Isaac Sim Introduction",
+              "description": "Introduction",
+              "source": "@site/docs/module-3/01-isaac-sim-intro.md",
+              "sourceDirName": "module-3",
+              "slug": "/module-3/isaac-sim-intro",
+              "permalink": "/docs/module-3/isaac-sim-intro",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-3/01-isaac-sim-intro.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1
+              },
+              "sidebar": "physaiTextbook",
+              "previous": {
+                "title": "Sensor Simulation",
+                "permalink": "/docs/module-2/sensor-simulation"
+              },
+              "next": {
+                "title": "Visual SLAM",
+                "permalink": "/docs/module-3/visual-slam"
+              }
+            },
+            {
+              "id": "module-3/nav2-path-planning",
+              "title": "Nav2 Path Planning",
+              "description": "Introduction",
+              "source": "@site/docs/module-3/03-nav2-path-planning.md",
+              "sourceDirName": "module-3",
+              "slug": "/module-3/nav2-path-planning",
+              "permalink": "/docs/module-3/nav2-path-planning",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-3/03-nav2-path-planning.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 3,
+              "frontMatter": {
+                "sidebar_position": 3
+              },
+              "sidebar": "physaiTextbook",
+              "previous": {
+                "title": "Visual SLAM",
+                "permalink": "/docs/module-3/visual-slam"
+              },
+              "next": {
+                "title": "Sim-to-Real Transfer",
+                "permalink": "/docs/module-3/sim-to-real-transfer"
+              }
+            },
+            {
+              "id": "module-3/sim-to-real-transfer",
+              "title": "Sim-to-Real Transfer",
+              "description": "Introduction",
+              "source": "@site/docs/module-3/04-sim-to-real-transfer.md",
+              "sourceDirName": "module-3",
+              "slug": "/module-3/sim-to-real-transfer",
+              "permalink": "/docs/module-3/sim-to-real-transfer",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-3/04-sim-to-real-transfer.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 4,
+              "frontMatter": {
+                "sidebar_position": 4
+              },
+              "sidebar": "physaiTextbook",
+              "previous": {
+                "title": "Nav2 Path Planning",
+                "permalink": "/docs/module-3/nav2-path-planning"
+              },
+              "next": {
+                "title": "Voice to Action with Whisper",
+                "permalink": "/docs/module-4/voice-to-action-whisper"
+              }
+            },
+            {
+              "id": "module-3/visual-slam",
+              "title": "Visual SLAM",
+              "description": "Introduction",
+              "source": "@site/docs/module-3/02-visual-slam.md",
+              "sourceDirName": "module-3",
+              "slug": "/module-3/visual-slam",
+              "permalink": "/docs/module-3/visual-slam",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-3/02-visual-slam.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "sidebar_position": 2
+              },
+              "sidebar": "physaiTextbook",
+              "previous": {
+                "title": "Isaac Sim Introduction",
+                "permalink": "/docs/module-3/isaac-sim-intro"
+              },
+              "next": {
+                "title": "Nav2 Path Planning",
+                "permalink": "/docs/module-3/nav2-path-planning"
+              }
+            },
+            {
+              "id": "module-4/capstone-pipeline",
+              "title": "Capstone Pipeline",
+              "description": "Introduction",
+              "source": "@site/docs/module-4/04-capstone-pipeline.md",
+              "sourceDirName": "module-4",
+              "slug": "/module-4/capstone-pipeline",
+              "permalink": "/docs/module-4/capstone-pipeline",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-4/04-capstone-pipeline.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 4,
+              "frontMatter": {
+                "sidebar_position": 4
+              },
+              "sidebar": "physaiTextbook",
+              "previous": {
+                "title": "Humanoid Locomotion",
+                "permalink": "/docs/module-4/humanoid-locomotion"
+              }
+            },
+            {
+              "id": "module-4/humanoid-locomotion",
+              "title": "Humanoid Locomotion",
+              "description": "Introduction",
+              "source": "@site/docs/module-4/03-humanoid-locomotion.md",
+              "sourceDirName": "module-4",
+              "slug": "/module-4/humanoid-locomotion",
+              "permalink": "/docs/module-4/humanoid-locomotion",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-4/03-humanoid-locomotion.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 3,
+              "frontMatter": {
+                "sidebar_position": 3
+              },
+              "sidebar": "physaiTextbook",
+              "previous": {
+                "title": "LLM Cognitive Planning",
+                "permalink": "/docs/module-4/llm-cognitive-planning"
+              },
+              "next": {
+                "title": "Capstone Pipeline",
+                "permalink": "/docs/module-4/capstone-pipeline"
+              }
+            },
+            {
+              "id": "module-4/llm-cognitive-planning",
+              "title": "LLM Cognitive Planning",
+              "description": "Introduction",
+              "source": "@site/docs/module-4/02-llm-cognitive-planning.md",
+              "sourceDirName": "module-4",
+              "slug": "/module-4/llm-cognitive-planning",
+              "permalink": "/docs/module-4/llm-cognitive-planning",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-4/02-llm-cognitive-planning.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "sidebar_position": 2
+              },
+              "sidebar": "physaiTextbook",
+              "previous": {
+                "title": "Voice to Action with Whisper",
+                "permalink": "/docs/module-4/voice-to-action-whisper"
+              },
+              "next": {
+                "title": "Humanoid Locomotion",
+                "permalink": "/docs/module-4/humanoid-locomotion"
+              }
+            },
+            {
+              "id": "module-4/voice-to-action-whisper",
+              "title": "Voice to Action with Whisper",
+              "description": "Introduction",
+              "source": "@site/docs/module-4/01-voice-to-action-whisper.md",
+              "sourceDirName": "module-4",
+              "slug": "/module-4/voice-to-action-whisper",
+              "permalink": "/docs/module-4/voice-to-action-whisper",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-4/01-voice-to-action-whisper.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1
+              },
+              "sidebar": "physaiTextbook",
+              "previous": {
+                "title": "Sim-to-Real Transfer",
+                "permalink": "/docs/module-3/sim-to-real-transfer"
+              },
+              "next": {
+                "title": "LLM Cognitive Planning",
+                "permalink": "/docs/module-4/llm-cognitive-planning"
+              }
+            }
+          ],
+          "drafts": [],
+          "sidebars": {
+            "physaiTextbook": [
+              {
+                "type": "category",
+                "label": "Module 0: Foundations",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "module-0/physical-ai-concepts"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "module-0/hardware-stack-jetson-rtx"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "module-0/lab-architecture"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "module-0/humanoid-landscape"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "Module 1: ROS 2 (Nervous System)",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "module-1/ros2-architecture"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "module-1/python-rclpy-agents"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "module-1/urdf-robot-description"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "module-1/launch-systems"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "Module 2: Digital Twin (Simulation)",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "module-2/gazebo-physics"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "module-2/world-building-sdf"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "module-2/unity-visualization"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "module-2/sensor-simulation"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "Module 3: Isaac AI (The Brain)",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "module-3/isaac-sim-intro"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "module-3/visual-slam"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "module-3/nav2-path-planning"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "module-3/sim-to-real-transfer"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "Module 4: VLA (Vision-Language-Action)",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "module-4/voice-to-action-whisper"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "module-4/llm-cognitive-planning"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "module-4/humanoid-locomotion"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "module-4/capstone-pipeline"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "docusaurus-plugin-content-pages": {
+    "default": null
+  },
+  "docusaurus-plugin-debug": {},
+  "docusaurus-theme-classic": {},
+  "docusaurus-bootstrap-plugin": {},
+  "docusaurus-mdx-fallback-plugin": {}
+}

@@ -1,0 +1,27 @@
+{
+  "id": "module-2/unity-visualization",
+  "title": "Unity Visualization",
+  "description": "Introduction",
+  "source": "@site/docs/module-2/03-unity-visualization.md",
+  "sourceDirName": "module-2",
+  "slug": "/module-2/unity-visualization",
+  "permalink": "/docs/module-2/unity-visualization",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-2/03-unity-visualization.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "physaiTextbook",
+  "previous": {
+    "title": "World Building with SDF",
+    "permalink": "/docs/module-2/world-building-sdf"
+  },
+  "next": {
+    "title": "Sensor Simulation",
+    "permalink": "/docs/module-2/sensor-simulation"
+  }
+}

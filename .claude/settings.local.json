@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "SlashCommand(/sp.constitution)",
+      "Bash(git add .specify/memory/constitution.md)",
+      "SlashCommand(/sp.phr)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nUpdate project constitution with hackathon requirements\n\n- Rename Hackathon Speed to Hackathon Efficiency with \"Done is better than perfect\" principle\n- Update Academic Rigor to focus on professional, university-level content\n- Change Modularity to Modular Architecture with Phase 2 preparation focus\n- Add Context Awareness principle requiring checking specs/tasks.md\n- Update Code Quality to include Python for script generation\n- Update Technology Stack to include Python for scripting tasks\n\nThese changes align the project constitution with the hackathon requirements:\n1. Hackathon Efficiency: \"Done is better than perfect\"\n2. Academic Rigor: Technically accurate, professional content for students\n3. Modular Architecture: Preparing for Chatbot and Auth in Phase 2\n4. Code Quality: TypeScript for frontend, Python for scripting\n5. Context Awareness: Always check specs/tasks.md before starting work\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(npx create-docusaurus@latest . classic --typescript)",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "Bash(npx create-docusaurus@latest frontend classic --typescript)",
+      "Bash(npx create-docusaurus@latest frontend classic --typescript --skip-install)",
+      "Bash(powershell Remove-Item -Recurse -Force frontend)",
+      "Bash(mkdir -p specs/physai-foundations)",
+      "SlashCommand(/sp.specify)",
+      "Bash(npm run start)",
+      "Bash(npm install)",
+      "Bash(npm install --verbose)",
+      "Bash(npm run build)",
+      "Bash(npx docusaurus start)",
+      "Bash(node_modules/.bin/docusaurus start)",
+      "Bash(npx docusaurus build)",
+      "Bash(npm run clear)",
+      "Bash(git add .)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

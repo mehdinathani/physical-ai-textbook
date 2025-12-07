@@ -1,0 +1,18 @@
+{
+  "id": "intro",
+  "title": "Physical AI & Humanoid Robotics Textbook",
+  "description": "Welcome to the comprehensive textbook on Physical AI and Humanoid Robotics. This resource covers the complete technology stack from foundational concepts to advanced implementation.",
+  "source": "@site/docs/intro.md",
+  "sourceDirName": ".",
+  "slug": "/intro",
+  "permalink": "/docs/intro",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/intro.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  }
+}

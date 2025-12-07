@@ -1,0 +1,27 @@
+{
+  "id": "module-1/urdf-robot-description",
+  "title": "URDF Robot Description",
+  "description": "Introduction",
+  "source": "@site/docs/module-1/03-urdf-robot-description.md",
+  "sourceDirName": "module-1",
+  "slug": "/module-1/urdf-robot-description",
+  "permalink": "/docs/module-1/urdf-robot-description",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-1/03-urdf-robot-description.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "physaiTextbook",
+  "previous": {
+    "title": "Python rclpy Agents",
+    "permalink": "/docs/module-1/python-rclpy-agents"
+  },
+  "next": {
+    "title": "Launch Systems",
+    "permalink": "/docs/module-1/launch-systems"
+  }
+}
