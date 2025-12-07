@@ -30,6 +30,7 @@ jobs:
         run: |
           rm -rf docs
           mv frontend/build docs
+          touch docs/.nojekyll
         shell: bash
 
       - name: Deploy to GitHub Pages
