@@ -42,7 +42,16 @@
       "Bash(dir specs/physai-foundations)",
       "Bash(powershell -ExecutionPolicy Bypass -File \".specify/scripts/powershell/check-prerequisites.ps1\" -FeatureDir \"physai-foundations\" -Json -RequireTasks -IncludeTasks)",
       "SlashCommand(/sp.implement)",
-      "Bash(git add .)"
+      "Bash(git add .)",
+      "Bash(git commit -m \"Phase 3 Complete: Gemini Backend and Chat Widget\")",
+      "Bash(git push origin main)",
+      "Bash(git push origin master)",
+      "Bash(git add render.yaml)",
+      "Bash(git commit -m \"Add render.yaml blueprint for physai-backend deployment\")",
+      "Bash(SPECIFY_FEATURE=physai-foundations powershell -ExecutionPolicy Bypass -File \".specify/scripts/powershell/check-prerequisites.ps1\" -Json -RequireTasks -IncludeTasks)",
+      "Bash(git rev-parse --git-dir)",
+      "Bash(git add backend/ingest.py)",
+      "Bash(git commit -m \"Fix: Correct path to frontend/docs for Render deployment\")"
     ],
     "deny": [],
     "ask": []

@@ -13,7 +13,6 @@ from pydantic import BaseModel
 from dotenv import load_dotenv
 
 import google.generativeai as genai
-from google.generativeai import embedding_vectors
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from qdrant_client import QdrantClient
