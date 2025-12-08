@@ -1,12 +1,55 @@
 node_modules/
 __pycache__/
-.env
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+.ENV
+.venv.bak/
+.ENV.bak/
+.env*
+!.env.example
 build/
 dist/
-.DS_Store
+*.egg
+*.egg-info/
+.eggs/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+pip-delete-this-directory.txt
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
 *.log
-coverage/
-.nyc_output/
+.git/
+.mypy_cache/
+.pytest_cache/
+.hypothesis/
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+.DS_Store?
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
 .env.local
 .env.development.local
 .env.test.local
@@ -21,31 +64,3 @@ lib-cov
 *.seed
 .codacy-coverage
 .jest/
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
- Thumbs.db
- ehthumbs.db
- Icon?
- .AppleDouble
- .LSOverride
- .Spotlight-V100
- .Trashes
- .DocumentRevisions-V100
- .fseventsd
- .TemporaryItems
- .metadata
- .DS_Store
- .localized
- .DS_Store?
- .Spotlight-V100
- .Trashes
- .VolumeIcon.icns
- .com.apple.timemachine.donotpresent
- .AppleDB
- .AppleDesktop
- Network Trash Folder
- Temporary Items
- .apdisk

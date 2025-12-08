@@ -48,6 +48,28 @@ const config: Config = {
     ],
   ],
 
+  themes: [
+    [
+      '@docusaurus/theme-classic',
+      {
+        customCss: require.resolve('./src/css/custom.css'),
+      },
+    ],
+  ],
+
+  plugins: [
+    [
+      '@docusaurus/plugin-ideal-image',
+      {
+        quality: 70,
+        max: 1030, // max resized image's size.
+        min: 640, // min resized image's size. if original is not bigger, no resize is done.
+        steps: 2, // the max number of images generated between min and max (inclusive)
+        disableInDev: false,
+      },
+    ],
+  ],
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
