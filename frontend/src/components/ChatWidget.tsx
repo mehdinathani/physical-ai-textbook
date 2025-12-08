@@ -50,7 +50,7 @@ const ChatWidget: React.FC = () => {
 
     try {
       // Call the backend API
-      const response = await fetch(process.env.REACT_APP_API_URL || 'http://localhost:8000/api/chat', {
+      const response = await fetch(process.env.REACT_APP_API_URL || 'https://physai-backend.onrender.com/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

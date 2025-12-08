@@ -48,15 +48,6 @@ const config: Config = {
     ],
   ],
 
-  themes: [
-    [
-      '@docusaurus/theme-classic',
-      {
-        customCss: require.resolve('./src/css/custom.css'),
-      },
-    ],
-  ],
-
   plugins: [
     [
       '@docusaurus/plugin-ideal-image',
