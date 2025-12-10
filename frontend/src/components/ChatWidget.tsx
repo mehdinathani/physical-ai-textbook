@@ -4,15 +4,15 @@ import { ChatKit, useChatKit } from '@openai/chatkit-react';
 const ChatWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Note: ChatKit expects a different API structure than our backend
-  // We'll need to implement a custom API adapter or use a different approach
-  // For now, using a placeholder configuration
+  // Note: ChatKit expects a specific backend API format
+  // We need to adapt our backend to work with ChatKit
   const { control } = useChatKit({
     api: {
+      // This is a placeholder - ChatKit expects a different API structure
+      // than our current backend
       getClientSecret: async () => {
-        // This is a placeholder - in a real implementation,
-        // we would need to adapt our backend to match ChatKit's expected format
-        // or create an intermediate service to translate between formats
+        // For now, we'll return a placeholder
+        // In a real implementation, you would need to adapt your backend
         return 'placeholder-secret';
       },
     },
@@ -101,7 +101,7 @@ const ChatWidget: React.FC = () => {
           </div>
 
           {/* ChatKit Component */}
-          <div className="flex-1 overflow-hidden">
+          <div className="flex-1 overflow-hidden bg-white">
             <ChatKit
               control={control}
               className="h-full w-full"
