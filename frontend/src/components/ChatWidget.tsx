@@ -98,12 +98,28 @@ const ChatWidget: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-[9999]" role="complementary" aria-label="AI Chat Widget">
+    <div style={{
+      position: 'fixed',
+      bottom: '20px',
+      right: '20px',
+      zIndex: 9999
+    }} role="complementary" aria-label="AI Chat Widget">
       {/* Floating Action Button */}
       {!isOpen && (
         <button
           onClick={toggleChat}
-          className="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+          style={{
+            backgroundColor: '#2563eb', // Bright Blue
+            color: 'white',
+            borderRadius: '50%',
+            width: '60px',
+            height: '60px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+          }}
           aria-label="Open chat"
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') {
@@ -120,7 +136,22 @@ const ChatWidget: React.FC = () => {
       {/* Chat Window */}
       {isOpen && (
         <div
-          className="flex flex-col h-[500px] w-[380px] max-w-full bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden flex shadow-2xl"
+          style={{
+            position: 'fixed',
+            bottom: '90px',
+            right: '20px',
+            display: 'flex',
+            flexDirection: 'column',
+            height: '500px',
+            width: '380px',
+            maxWidth: '100%',
+            backgroundColor: 'white',
+            color: 'inherit',
+            borderRadius: '8px',
+            boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04)',
+            border: '1px solid #e5e7eb',
+            overflow: 'hidden'
+          }}
           role="dialog"
           aria-modal="true"
           aria-labelledby="chat-title"
