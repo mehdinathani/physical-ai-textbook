@@ -98,7 +98,7 @@ const ChatWidget: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50" role="complementary" aria-label="AI Chat Widget">
+    <div className="fixed bottom-6 right-6 z-[9999]" role="complementary" aria-label="AI Chat Widget">
       {/* Floating Action Button */}
       {!isOpen && (
         <button
