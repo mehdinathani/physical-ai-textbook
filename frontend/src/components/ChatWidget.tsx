@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useChat } from 'ai/react';
+import { useChat } from 'ai';
 import { Send, Bot, User } from 'lucide-react';
 import { cn } from 'clsx';
 import { twMerge } from 'tailwind-merge';
