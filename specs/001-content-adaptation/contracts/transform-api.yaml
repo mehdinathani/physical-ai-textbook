@@ -1,0 +1,103 @@
+openapi: 3.0.3
+info:
+  title: Content Transformation API
+  description: API for translating and personalizing educational content
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+    description: Local development server
+  - url: https://api.physai-foundations.com
+    description: Production server
+
+paths:
+  /api/transform:
+    post:
+      summary: Transform content based on specified type
+      description: Transforms educational content to Urdu or personalizes it for different engineering disciplines while preserving formatting
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransformationRequest'
+      responses:
+        '200':
+          description: Successfully transformed content
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransformationResponse'
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      tags:
+        - Transformation
+
+components:
+  schemas:
+    TransformationRequest:
+      type: object
+      required:
+        - sourceContent
+        - transformationType
+      properties:
+        sourceContent:
+          type: string
+          description: Original markdown content to transform
+          example: "# Introduction to Robotics\n\nRobots are machines that can be programmed..."
+        transformationType:
+          type: string
+          enum: [urdu-translation, hardware-personalization, software-personalization]
+          description: Type of transformation to apply
+        preserveFormatting:
+          type: boolean
+          description: Whether to preserve markdown formatting, code blocks, and images
+          default: true
+
+    TransformationResponse:
+      type: object
+      required:
+        - transformedContent
+        - transformationType
+        - processingTimeMs
+      properties:
+        transformedContent:
+          type: string
+          description: The transformed content with preserved formatting
+          example: "# روبوٹکس کا تعارف\n\nروبوٹ وہ مشینیں ہیں جنہیں پروگرام کیا جا سکتا ہے..."
+        transformationType:
+          type: string
+          enum: [urdu-translation, hardware-personalization, software-personalization]
+          description: Type of transformation that was applied
+        processingTimeMs:
+          type: integer
+          description: Time taken to process the request in milliseconds
+          example: 2450
+
+    ErrorResponse:
+      type: object
+      required:
+        - error
+        - message
+      properties:
+        error:
+          type: string
+          description: Error code
+          example: "TRANSFORMATION_ERROR"
+        message:
+          type: string
+          description: Human-readable error message
+          example: "Content exceeds maximum length allowed"
+
+tags:
+  - name: Transformation
+    description: Content transformation operations

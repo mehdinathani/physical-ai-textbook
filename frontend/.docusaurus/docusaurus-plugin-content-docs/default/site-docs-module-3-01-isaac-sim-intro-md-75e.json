@@ -5,7 +5,7 @@
   "source": "@site/docs/module-3/01-isaac-sim-intro.md",
   "sourceDirName": "module-3",
   "slug": "/module-3/isaac-sim-intro",
-  "permalink": "/physical-ai-textbook/docs/module-3/isaac-sim-intro",
+  "permalink": "/docs/module-3/isaac-sim-intro",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-3/01-isaac-sim-intro.md",
@@ -18,10 +18,10 @@
   "sidebar": "physaiTextbook",
   "previous": {
     "title": "Sensor Simulation",
-    "permalink": "/physical-ai-textbook/docs/module-2/sensor-simulation"
+    "permalink": "/docs/module-2/sensor-simulation"
   },
   "next": {
     "title": "Visual SLAM",
-    "permalink": "/physical-ai-textbook/docs/module-3/visual-slam"
+    "permalink": "/docs/module-3/visual-slam"
   }
 }

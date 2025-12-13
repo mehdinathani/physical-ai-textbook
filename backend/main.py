@@ -2,6 +2,7 @@
 The Tutor: Chat API for the Physical AI & Humanoid Robotics Textbook.
 
 This service implements RAG logic: Embed query -> Search Qdrant -> Construct System Prompt -> Call Google Gemini Chat.
+Additionally, it provides content transformation capabilities for localization and personalization.
 """
 
 import os
@@ -16,6 +17,9 @@ import google.generativeai as genai
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from qdrant_client import QdrantClient
+
+# Import the transformation service
+from src.services.transform_service import TransformService, ContentTransformationRequest
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -55,6 +59,9 @@ class SimpleCache:
 
 # Initialize cache
 query_cache = SimpleCache(ttl=3600)  # 1 hour TTL
+
+# Initialize transformation service
+transform_service = TransformService()
 
 # Pydantic model for the request (as specified in the task)
 class ChatRequest(BaseModel):
@@ -253,6 +260,33 @@ def chat(request: ChatRequest):
         logger.error(f"Request failed after {total_time:.2f}s: {str(e)}")
         return {
             "error": "An unexpected error occurred",
+            "details": str(e)
+        }
+
+
+@app.post("/api/transform")
+async def transform_content(request: ContentTransformationRequest):
+    """
+    Transform content based on the specified transformation type.
+    Supports Urdu translation, hardware personalization, and software personalization.
+    """
+    start_time = time.time()
+    logger.info(f"Processing content transformation request: {request.transformation_type}")
+
+    try:
+        # Call the transformation service
+        result = await transform_service.transform_content(request)
+
+        total_time = time.time() - start_time
+        logger.info(f"Content transformation completed successfully in {total_time:.2f}s")
+
+        return result
+
+    except Exception as e:
+        total_time = time.time() - start_time
+        logger.error(f"Content transformation failed after {total_time:.2f}s: {str(e)}")
+        return {
+            "error": "An unexpected error occurred during content transformation",
             "details": str(e)
         }
 

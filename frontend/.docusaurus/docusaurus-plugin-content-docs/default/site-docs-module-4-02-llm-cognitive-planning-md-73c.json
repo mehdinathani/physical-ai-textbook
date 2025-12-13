@@ -5,7 +5,7 @@
   "source": "@site/docs/module-4/02-llm-cognitive-planning.md",
   "sourceDirName": "module-4",
   "slug": "/module-4/llm-cognitive-planning",
-  "permalink": "/physical-ai-textbook/docs/module-4/llm-cognitive-planning",
+  "permalink": "/docs/module-4/llm-cognitive-planning",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-4/02-llm-cognitive-planning.md",
@@ -18,10 +18,10 @@
   "sidebar": "physaiTextbook",
   "previous": {
     "title": "Voice to Action with Whisper",
-    "permalink": "/physical-ai-textbook/docs/module-4/voice-to-action-whisper"
+    "permalink": "/docs/module-4/voice-to-action-whisper"
   },
   "next": {
     "title": "Humanoid Locomotion",
-    "permalink": "/physical-ai-textbook/docs/module-4/humanoid-locomotion"
+    "permalink": "/docs/module-4/humanoid-locomotion"
   }
 }

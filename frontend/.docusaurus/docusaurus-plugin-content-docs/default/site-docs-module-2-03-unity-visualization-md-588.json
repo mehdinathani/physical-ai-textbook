@@ -5,7 +5,7 @@
   "source": "@site/docs/module-2/03-unity-visualization.md",
   "sourceDirName": "module-2",
   "slug": "/module-2/unity-visualization",
-  "permalink": "/physical-ai-textbook/docs/module-2/unity-visualization",
+  "permalink": "/docs/module-2/unity-visualization",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-2/03-unity-visualization.md",
@@ -18,10 +18,10 @@
   "sidebar": "physaiTextbook",
   "previous": {
     "title": "World Building with SDF",
-    "permalink": "/physical-ai-textbook/docs/module-2/world-building-sdf"
+    "permalink": "/docs/module-2/world-building-sdf"
   },
   "next": {
     "title": "Sensor Simulation",
-    "permalink": "/physical-ai-textbook/docs/module-2/sensor-simulation"
+    "permalink": "/docs/module-2/sensor-simulation"
   }
 }

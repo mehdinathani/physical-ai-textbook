@@ -1,102 +1,102 @@
 {
-  "/physical-ai-textbook/docs-709": {
+  "/docs-958": {
     "__comp": "5e95c892",
     "__context": {
       "plugin": "5b9f59c7"
     }
   },
-  "/physical-ai-textbook/docs-c94": {
+  "/docs-313": {
     "__comp": "a7bd4aaa",
     "version": "935f2afb"
   },
-  "/physical-ai-textbook/docs-6f9": {
+  "/docs-d84": {
     "__comp": "a94703ab"
   },
-  "/physical-ai-textbook/docs/intro-920": {
+  "/docs/intro-e84": {
     "__comp": "17896441",
     "content": "0e384e19"
   },
-  "/physical-ai-textbook/docs/module-0/hardware-stack-jetson-rtx-dff": {
+  "/docs/module-0/hardware-stack-jetson-rtx-0ac": {
     "__comp": "17896441",
     "content": "42c30de8"
   },
-  "/physical-ai-textbook/docs/module-0/humanoid-landscape-be4": {
+  "/docs/module-0/humanoid-landscape-4c7": {
     "__comp": "17896441",
     "content": "0585b199"
   },
-  "/physical-ai-textbook/docs/module-0/lab-architecture-83a": {
+  "/docs/module-0/lab-architecture-555": {
     "__comp": "17896441",
     "content": "766450ca"
   },
-  "/physical-ai-textbook/docs/module-0/physical-ai-concepts-e82": {
+  "/docs/module-0/physical-ai-concepts-6c6": {
     "__comp": "17896441",
     "content": "657de8d4"
   },
-  "/physical-ai-textbook/docs/module-1/launch-systems-132": {
+  "/docs/module-1/launch-systems-5f8": {
     "__comp": "17896441",
     "content": "3a6950ee"
   },
-  "/physical-ai-textbook/docs/module-1/python-rclpy-agents-d84": {
+  "/docs/module-1/python-rclpy-agents-b9f": {
     "__comp": "17896441",
     "content": "ecbb4035"
   },
-  "/physical-ai-textbook/docs/module-1/ros2-architecture-ed1": {
+  "/docs/module-1/ros2-architecture-0f3": {
     "__comp": "17896441",
     "content": "6c8252e7"
   },
-  "/physical-ai-textbook/docs/module-1/urdf-robot-description-948": {
+  "/docs/module-1/urdf-robot-description-004": {
     "__comp": "17896441",
     "content": "9c76dc05"
   },
-  "/physical-ai-textbook/docs/module-2/gazebo-physics-4ea": {
+  "/docs/module-2/gazebo-physics-553": {
     "__comp": "17896441",
     "content": "d3ea6758"
   },
-  "/physical-ai-textbook/docs/module-2/sensor-simulation-06f": {
+  "/docs/module-2/sensor-simulation-331": {
     "__comp": "17896441",
     "content": "6fac6de8"
   },
-  "/physical-ai-textbook/docs/module-2/unity-visualization-a57": {
+  "/docs/module-2/unity-visualization-2b5": {
     "__comp": "17896441",
     "content": "5887c569"
   },
-  "/physical-ai-textbook/docs/module-2/world-building-sdf-1e6": {
+  "/docs/module-2/world-building-sdf-d20": {
     "__comp": "17896441",
     "content": "3d4f8a32"
   },
-  "/physical-ai-textbook/docs/module-3/isaac-sim-intro-556": {
+  "/docs/module-3/isaac-sim-intro-b1a": {
     "__comp": "17896441",
     "content": "75e8f361"
   },
-  "/physical-ai-textbook/docs/module-3/nav2-path-planning-dee": {
+  "/docs/module-3/nav2-path-planning-458": {
     "__comp": "17896441",
     "content": "bbf0739f"
   },
-  "/physical-ai-textbook/docs/module-3/sim-to-real-transfer-572": {
+  "/docs/module-3/sim-to-real-transfer-10d": {
     "__comp": "17896441",
     "content": "d8514bcd"
   },
-  "/physical-ai-textbook/docs/module-3/visual-slam-857": {
+  "/docs/module-3/visual-slam-590": {
     "__comp": "17896441",
     "content": "806b3c1b"
   },
-  "/physical-ai-textbook/docs/module-4/capstone-pipeline-029": {
+  "/docs/module-4/capstone-pipeline-52b": {
     "__comp": "17896441",
     "content": "459e3608"
   },
-  "/physical-ai-textbook/docs/module-4/humanoid-locomotion-183": {
+  "/docs/module-4/humanoid-locomotion-e7c": {
     "__comp": "17896441",
     "content": "109b40c0"
   },
-  "/physical-ai-textbook/docs/module-4/llm-cognitive-planning-2bc": {
+  "/docs/module-4/llm-cognitive-planning-cd4": {
     "__comp": "17896441",
     "content": "73c32afe"
   },
-  "/physical-ai-textbook/docs/module-4/voice-to-action-whisper-9f7": {
+  "/docs/module-4/voice-to-action-whisper-50b": {
     "__comp": "17896441",
     "content": "9e695687"
   },
-  "/physical-ai-textbook/-4db": {
+  "/-c92": {
     "__comp": "1df93b7f",
     "__context": {
       "plugin": "020bc8ae"

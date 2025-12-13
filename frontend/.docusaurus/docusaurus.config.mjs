@@ -7,10 +7,11 @@ export default {
   "title": "Physical AI & Humanoid Robotics Textbook",
   "tagline": "From digital AI to embodied intelligence",
   "favicon": "img/favicon.ico",
-  "url": "https://mehdinathani.github.io",
-  "baseUrl": "/physical-ai-textbook/",
+  "url": "https://physai-foundations.vercel.app",
+  "baseUrl": "/",
   "organizationName": "mehdinathani",
   "projectName": "physical-ai-textbook",
+  "trailingSlash": false,
   "onBrokenLinks": "throw",
   "onBrokenMarkdownLinks": "warn",
   "i18n": {
@@ -33,6 +34,18 @@ export default {
         "theme": {
           "customCss": "./src/css/custom.css"
         }
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "@docusaurus/plugin-ideal-image",
+      {
+        "quality": 70,
+        "max": 1030,
+        "min": 640,
+        "steps": 2,
+        "disableInDev": false
       }
     ]
   ],
@@ -325,7 +338,6 @@ export default {
     "static"
   ],
   "customFields": {},
-  "plugins": [],
   "themes": [],
   "scripts": [],
   "headTags": [],

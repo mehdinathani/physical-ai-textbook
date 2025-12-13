@@ -5,7 +5,7 @@
   "source": "@site/docs/module-4/04-capstone-pipeline.md",
   "sourceDirName": "module-4",
   "slug": "/module-4/capstone-pipeline",
-  "permalink": "/physical-ai-textbook/docs/module-4/capstone-pipeline",
+  "permalink": "/docs/module-4/capstone-pipeline",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-4/04-capstone-pipeline.md",
@@ -18,6 +18,6 @@
   "sidebar": "physaiTextbook",
   "previous": {
     "title": "Humanoid Locomotion",
-    "permalink": "/physical-ai-textbook/docs/module-4/humanoid-locomotion"
+    "permalink": "/docs/module-4/humanoid-locomotion"
   }
 }

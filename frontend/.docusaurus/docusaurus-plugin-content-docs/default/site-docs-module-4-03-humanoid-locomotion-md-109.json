@@ -5,7 +5,7 @@
   "source": "@site/docs/module-4/03-humanoid-locomotion.md",
   "sourceDirName": "module-4",
   "slug": "/module-4/humanoid-locomotion",
-  "permalink": "/physical-ai-textbook/docs/module-4/humanoid-locomotion",
+  "permalink": "/docs/module-4/humanoid-locomotion",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-4/03-humanoid-locomotion.md",
@@ -18,10 +18,10 @@
   "sidebar": "physaiTextbook",
   "previous": {
     "title": "LLM Cognitive Planning",
-    "permalink": "/physical-ai-textbook/docs/module-4/llm-cognitive-planning"
+    "permalink": "/docs/module-4/llm-cognitive-planning"
   },
   "next": {
     "title": "Capstone Pipeline",
-    "permalink": "/physical-ai-textbook/docs/module-4/capstone-pipeline"
+    "permalink": "/docs/module-4/capstone-pipeline"
   }
 }

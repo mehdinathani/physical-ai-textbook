@@ -5,7 +5,7 @@
   "source": "@site/docs/module-2/04-sensor-simulation.md",
   "sourceDirName": "module-2",
   "slug": "/module-2/sensor-simulation",
-  "permalink": "/physical-ai-textbook/docs/module-2/sensor-simulation",
+  "permalink": "/docs/module-2/sensor-simulation",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/physai-foundations/physai-foundations/tree/main/docs/module-2/04-sensor-simulation.md",
@@ -18,10 +18,10 @@
   "sidebar": "physaiTextbook",
   "previous": {
     "title": "Unity Visualization",
-    "permalink": "/physical-ai-textbook/docs/module-2/unity-visualization"
+    "permalink": "/docs/module-2/unity-visualization"
   },
   "next": {
     "title": "Isaac Sim Introduction",
-    "permalink": "/physical-ai-textbook/docs/module-3/isaac-sim-intro"
+    "permalink": "/docs/module-3/isaac-sim-intro"
   }
 }
