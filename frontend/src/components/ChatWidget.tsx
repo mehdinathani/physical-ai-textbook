@@ -1,8 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useChat } from 'ai/react';
 import { Send, Bot, User } from 'lucide-react';
-import { cn } from 'clsx';
+import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+
+// Utility function for conditional class names
+const cn = (...inputs: unknown[]) => {
+  return twMerge(clsx(inputs));
+};
 
 interface Message {
   id: string;
@@ -12,22 +16,66 @@ interface Message {
 
 const ChatWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [input, setInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Using Vercel AI SDK useChat hook
-  const {
-    messages,
-    input,
-    handleInputChange,
-    handleSubmit,
-    isLoading,
-    setInput
-  } = useChat({
-    api: 'https://physai-backend.onrender.com/api/chat',
-    onError: (error) => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim() || isLoading) return;
+
+    // Add user message
+    const userMessage: Message = {
+      id: Date.now().toString(),
+      content: input,
+      role: 'user'
+    };
+
+    setMessages(prev => [...prev, userMessage]);
+    const currentInput = input;
+    setInput('');
+    setIsLoading(true);
+
+    try {
+      const response = await fetch('https://physai-backend.onrender.com/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          messages: [...messages, userMessage]
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      const assistantMessage: Message = {
+        id: Date.now().toString(),
+        content: data.text || data.content || 'Sorry, I could not understand that.',
+        role: 'assistant'
+      };
+
+      setMessages(prev => [...prev, assistantMessage]);
+    } catch (error) {
       console.error('Chat error:', error);
+      const errorMessage: Message = {
+        id: Date.now().toString(),
+        content: 'Sorry, there was an error processing your request.',
+        role: 'assistant'
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
+      setIsLoading(false);
     }
-  });
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInput(e.target.value);
+  };
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
@@ -146,7 +194,7 @@ const ChatWidget: React.FC = () => {
 
           {/* Input Area */}
           <div className="border-t border-gray-200 p-4 bg-white">
-            <form onSubmit={onSubmit} className="flex gap-2">
+            <form onSubmit={handleSubmit} className="flex gap-2">
               <input
                 type="text"
                 value={input}
