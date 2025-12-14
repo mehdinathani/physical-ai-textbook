@@ -1,4 +1,5 @@
 import React from 'react';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import { useLocation } from '@docusaurus/router';
 import ChatWidget from '@site/src/components/ChatWidget';
 import ChapterTools from '@site/src/components/ChapterTools';
@@ -15,7 +16,9 @@ export default function Root({children}) {
     <>
       {isDocPage && <ChapterTools />}
       {children}
-      <ChatWidget />
+      <BrowserOnly>
+        {() => <ChatWidget />}
+      </BrowserOnly>
     </>
   );
 }
