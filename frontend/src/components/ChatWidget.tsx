@@ -1,224 +1,241 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Send, Bot, User } from 'lucide-react';
-import { clsx } from 'clsx';
-import { twMerge } from 'tailwind-merge';
-
-// Utility function for conditional class names
-const cn = (...inputs: unknown[]) => {
-  return twMerge(clsx(inputs));
-};
-
-interface Message {
-  id: string;
-  content: string;
-  role: 'user' | 'assistant';
-}
+import React, { useState, useEffect } from 'react';
+import { ChatKit, useChatKit } from '@openai/chatkit-react';
+import { Bot } from 'lucide-react';
 
 const ChatWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([]);
-  const [input, setInput] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const [initialThread, setInitialThread] = useState<string | undefined>(undefined);
+  const [isReady, setIsReady] = useState(false);
+  const [backendUrl, setBackendUrl] = useState<string>('http://localhost:8000/chatkit');
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim() || isLoading) return;
+  // ============================================================
+  // DEBUGGING & ENVIRONMENT: Initialize client-side state
+  // ============================================================
+  useEffect(() => {
+    console.log('[ChatWidget] Component mounted on client');
+    console.log('[ChatWidget] typeof window:', typeof window);
+    console.log('[ChatWidget] typeof import.meta:', typeof (globalThis as any).import?.meta);
 
-    // Add user message
-    const userMessage: Message = {
-      id: Date.now().toString(),
-      content: input,
-      role: 'user'
-    };
+    // CRITICAL: Only access import.meta.env inside useEffect (client-side only)
+    try {
+      // Use dynamic property access to avoid webpack parsing errors
+      const envBackendUrl = (globalThis as any).__VITE_CHATKIT_BACKEND_URL__ ||
+                           (typeof (globalThis as any).import !== 'undefined' &&
+                            typeof (globalThis as any).import.meta !== 'undefined'
+                            ? (globalThis as any).import.meta.env?.VITE_CHATKIT_BACKEND_URL
+                            : undefined) ||
+                           'http://localhost:8000/chatkit';
 
-    setMessages(prev => [...prev, userMessage]);
-    const currentInput = input;
-    setInput('');
-    setIsLoading(true);
+      console.log('[ChatWidget] VITE_CHATKIT_BACKEND_URL from env:', envBackendUrl);
+      setBackendUrl(envBackendUrl);
+    } catch (error) {
+      console.warn('[ChatWidget] Could not access import.meta.env, using default:', error);
+      setBackendUrl('http://localhost:8000/chatkit');
+    }
+  }, []);
+
+  // SSR-safe loading: Load thread ID from localStorage only on client
+  useEffect(() => {
+    console.log('[ChatWidget] useEffect: Checking client-side environment...');
+
+    if (typeof window === 'undefined') {
+      console.log('[ChatWidget] SSR detected - window is undefined, skipping localStorage');
+      return;
+    }
 
     try {
-      const response = await fetch('https://physai-backend.onrender.com/api/chat', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          messages: [...messages, userMessage]
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const data = await response.json();
-      const assistantMessage: Message = {
-        id: Date.now().toString(),
-        content: data.text || data.content || 'Sorry, I could not understand that.',
-        role: 'assistant'
-      };
-
-      setMessages(prev => [...prev, assistantMessage]);
+      const savedThreadId = localStorage.getItem('physai-chatkit-thread-id');
+      console.log('[ChatWidget] Retrieved saved thread ID from localStorage:', savedThreadId);
+      setInitialThread(savedThreadId || undefined);
+      setIsReady(true);
+      console.log('[ChatWidget] isReady set to true - component ready for rendering');
     } catch (error) {
-      console.error('Chat error:', error);
-      const errorMessage: Message = {
-        id: Date.now().toString(),
-        content: 'Sorry, there was an error processing your request.',
-        role: 'assistant'
-      };
-      setMessages(prev => [...prev, errorMessage]);
-    } finally {
-      setIsLoading(false);
+      console.error('[ChatWidget] Error accessing localStorage:', error);
+      console.log('[ChatWidget] Proceeding without thread persistence');
+      setIsReady(true); // Still proceed even if localStorage fails
     }
-  };
+  }, []);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInput(e.target.value);
-  };
+  console.log('[ChatWidget] Backend URL resolved to:', backendUrl);
+
+  // ============================================================
+  // CRITICAL: Always call hooks unconditionally (React Rules)
+  // useChatKit must be called every render, not conditionally
+  // ============================================================
+  let chatKit: any = null;
+  let hookError: any = null;
+
+  try {
+    console.log('[ChatWidget] 🔄 About to call useChatKit hook...');
+    console.log('[ChatWidget]   backendUrl:', backendUrl);
+    console.log('[ChatWidget]   initialThread:', initialThread);
+
+    // ============================================================
+    // CRITICAL: ChatKit API configuration
+    // CustomApiConfig requires BOTH url AND domainKey (validation requirement)
+    // For localhost, domain verification is skipped automatically
+    // ============================================================
+    console.log('[ChatWidget]   Configuring useChatKit...');
+    console.log('[ChatWidget]   Using backend URL:', backendUrl);
+
+    // CustomApiConfig with required fields
+    chatKit = useChatKit({
+      api: {
+        url: backendUrl,
+        domainKey: 'localhost',  // Required by schema, but verification skipped for localhost
+      },
+      theme: 'dark',
+      initialThread: initialThread || undefined,
+    });
+
+    console.log('[ChatWidget]   useChatKit initialized successfully (development mode)');
+    console.log('[ChatWidget]   API config:', { url: backendUrl, mode: 'development' });
+    console.log('[ChatWidget]   Theme:', 'dark');
+
+    console.log('[ChatWidget] ✅ useChatKit hook called successfully');
+    console.log('[ChatWidget]   chatKit type:', typeof chatKit);
+    console.log('[ChatWidget]   chatKit keys:', chatKit ? Object.keys(chatKit) : 'N/A');
+    console.log('[ChatWidget]   chatKit.control exists:', chatKit ? !!chatKit.control : 'N/A');
+    if (chatKit && chatKit.control) {
+      console.log('[ChatWidget]   control.options:', chatKit.control.options);
+    }
+  } catch (error) {
+    console.error('[ChatWidget] ❌ ERROR calling useChatKit hook:', error);
+    console.error('[ChatWidget]   Error message:', error instanceof Error ? error.message : String(error));
+    console.error('[ChatWidget]   Error stack:', error instanceof Error ? error.stack : 'N/A');
+    hookError = error;
+    chatKit = null;
+  }
 
   const toggleChat = () => {
+    console.log('[ChatWidget] Toggle chat - isOpen:', isOpen, '-> ', !isOpen);
     setIsOpen(!isOpen);
   };
 
-  // Scroll to bottom of messages when messages change
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
+  console.log('[ChatWidget] ✅ RENDERING WIDGET - isReady:', isReady, 'chatKit exists:', !!chatKit, 'isOpen:', isOpen);
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    handleSubmit(e);
-  };
-
+  // ALWAYS render the button, even if chatKit isn't ready yet
+  // The chat window only appears when both chatKit is ready AND isOpen is true
   return (
     <div
-      className="fixed bottom-5 right-5 z-50"
       role="complementary"
       aria-label="AI Chat Widget"
+      style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 9999, display: 'block' }}
     >
-      {/* Floating Action Button */}
+      {/* Floating Action Button - ALWAYS VISIBLE */}
       {!isOpen && (
         <button
           onClick={toggleChat}
-          className="bg-blue-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+          style={{
+            backgroundColor: '#2563eb',
+            color: 'white',
+            borderRadius: '50%',
+            width: '56px',
+            height: '56px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+            cursor: 'pointer',
+            border: 'none',
+            transition: 'background-color 0.2s'
+          }}
           aria-label="Open chat"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
           </svg>
         </button>
       )}
 
-      {/* Chat Window */}
-      {isOpen && (
-        <div className="fixed bottom-20 right-5 w-96 max-w-[90vw] h-[500px] flex flex-col bg-white border border-gray-200 rounded-lg shadow-xl overflow-hidden">
+      {/* Chat Window - Only when chatKit is ready AND isOpen is true */}
+      {isOpen && chatKit && chatKit.control && (
+        <div
+          style={{
+            position: 'fixed',
+            bottom: '80px',
+            right: '20px',
+            width: '384px',
+            maxWidth: '90vw',
+            height: '500px',
+            display: 'flex',
+            flexDirection: 'column',
+            backgroundColor: 'white',
+            border: '1px solid #e5e7eb',
+            borderRadius: '0.5rem',
+            boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)',
+            overflow: 'hidden'
+          }}
+        >
           {/* Header */}
-          <div className="bg-blue-600 text-white p-4 flex justify-between items-center">
-            <h3 className="font-semibold flex items-center gap-2">
-              <Bot className="w-5 h-5" />
+          <div style={{ backgroundColor: '#2563eb', color: 'white', padding: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexShrink: 0 }}>
+            <h3 style={{ fontWeight: '600', margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <Bot width={20} height={20} />
               PhysAI Assistant
             </h3>
             <button
               onClick={toggleChat}
-              className="text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 rounded-full p-1"
+              style={{ backgroundColor: 'transparent', border: 'none', color: 'white', cursor: 'pointer', padding: '0.25rem', borderRadius: '50%' }}
               aria-label="Close chat"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </button>
           </div>
 
-          {/* Messages Container */}
-          <div className="flex-1 overflow-y-auto p-4 bg-gray-50">
-            {messages.length === 0 ? (
-              <div className="h-full flex flex-col items-center justify-center text-gray-500">
-                <Bot className="w-12 h-12 mb-3 text-blue-500" />
-                <p className="text-center">Ask me anything about Physical AI & Robotics!</p>
-                <p className="text-sm mt-2 text-center">I can help explain concepts, provide examples, and answer questions.</p>
-              </div>
-            ) : (
-              <div className="space-y-4">
-                {messages.map((message) => (
-                  <div
-                    key={message.id}
-                    className={cn(
-                      'flex items-start gap-3',
-                      message.role === 'user' ? 'flex-row-reverse' : 'flex-row'
-                    )}
-                  >
-                    {message.role === 'assistant' ? (
-                      <div className="bg-blue-100 p-2 rounded-full flex items-center justify-center">
-                        <Bot className="w-4 h-4 text-blue-600" />
-                      </div>
-                    ) : (
-                      <div className="bg-gray-200 p-2 rounded-full flex items-center justify-center">
-                        <User className="w-4 h-4 text-gray-600" />
-                      </div>
-                    )}
-                    <div
-                      className={cn(
-                        'max-w-[75%] rounded-lg p-3',
-                        message.role === 'user'
-                          ? 'bg-blue-500 text-white rounded-tr-none'
-                          : 'bg-white border border-gray-200 rounded-tl-none'
-                      )}
-                    >
-                      {message.content}
-                    </div>
-                  </div>
-                ))}
-                {isLoading && (
-                  <div className="flex items-start gap-3">
-                    <div className="bg-blue-100 p-2 rounded-full flex items-center justify-center">
-                      <Bot className="w-4 h-4 text-blue-600" />
-                    </div>
-                    <div className="bg-white border border-gray-200 rounded-lg p-3 rounded-tl-none">
-                      <div className="flex space-x-2">
-                        <div className="w-2 h-2 rounded-full bg-gray-400 animate-bounce"></div>
-                        <div className="w-2 h-2 rounded-full bg-gray-400 animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-                        <div className="w-2 h-2 rounded-full bg-gray-400 animate-bounce" style={{ animationDelay: '0.4s' }}></div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-                <div ref={messagesEndRef} />
-              </div>
-            )}
+          {/* ChatKit Component */}
+          <div style={{ flex: '1 1 auto', minHeight: 0, display: 'flex', flexDirection: 'column' }}>
+            <ChatKit
+              control={chatKit.control}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                width: '100%',
+                height: '100%',
+                flex: '1 1 0'
+              }}
+            />
           </div>
+        </div>
+      )}
 
-          {/* Input Area */}
-          <div className="border-t border-gray-200 p-4 bg-white">
-            <form onSubmit={handleSubmit} className="flex gap-2">
-              <input
-                type="text"
-                value={input}
-                onChange={handleInputChange}
-                placeholder="Type your message..."
-                className="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                disabled={isLoading}
-              />
-              <button
-                type="submit"
-                disabled={isLoading || !input.trim()}
-                className={cn(
-                  'bg-blue-600 text-white rounded-lg px-4 py-2 flex items-center justify-center',
-                  'hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50',
-                  'disabled:opacity-50 disabled:cursor-not-allowed',
-                  'transition-colors duration-200'
-                )}
-              >
-                <Send className="w-4 h-4" />
-              </button>
-            </form>
-            <p className="text-xs text-gray-500 mt-2 text-center">
-              PhysAI Assistant • Powered by Gemini
-            </p>
+      {/* Loading state when chat is open but chatKit isn't ready */}
+      {isOpen && (!chatKit || !chatKit.control) && (
+        <div
+          style={{
+            position: 'fixed',
+            bottom: '80px',
+            right: '20px',
+            width: '384px',
+            maxWidth: '90vw',
+            height: '500px',
+            display: 'flex',
+            flexDirection: 'column',
+            backgroundColor: 'white',
+            border: '1px solid #e5e7eb',
+            borderRadius: '0.5rem',
+            boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)',
+            overflow: 'hidden'
+          }}
+        >
+          <div style={{ backgroundColor: '#2563eb', color: 'white', padding: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexShrink: 0 }}>
+            <h3 style={{ fontWeight: '600', margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <Bot width={20} height={20} />
+              PhysAI Assistant
+            </h3>
+            <button
+              onClick={toggleChat}
+              style={{ backgroundColor: 'transparent', border: 'none', color: 'white', cursor: 'pointer', padding: '0.25rem', borderRadius: '50%' }}
+              aria-label="Close chat"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </button>
+          </div>
+          <div style={{ padding: '1rem', textAlign: 'center', color: '#6b7280' }}>
+            Loading chat...
           </div>
         </div>
       )}
