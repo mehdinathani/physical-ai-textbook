@@ -64,3 +64,10 @@ lib-cov
 *.seed
 .codacy-coverage
 .jest/
+
+# ChatKit Backend
+backend-chatkit/.env
+backend-chatkit/venv/
+backend-chatkit/__pycache__/
+backend-chatkit/*.pyc
+frontend/.env.local

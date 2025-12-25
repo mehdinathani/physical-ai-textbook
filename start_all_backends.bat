@@ -1,0 +1,3 @@
+@echo off
+echo Starting All Backend Services...
+powershell -ExecutionPolicy Bypass -File "%~dp0start_all_backends.ps1"

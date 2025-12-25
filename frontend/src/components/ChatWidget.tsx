@@ -6,7 +6,7 @@ const ChatWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [initialThread, setInitialThread] = useState<string | undefined>(undefined);
   const [isReady, setIsReady] = useState(false);
-  const [backendUrl, setBackendUrl] = useState<string>('http://localhost:8000/chatkit');
+  const [backendUrl, setBackendUrl] = useState<string>('http://localhost:8001/chatkit');
 
   // ============================================================
   // DEBUGGING & ENVIRONMENT: Initialize client-side state
@@ -24,13 +24,13 @@ const ChatWidget: React.FC = () => {
                             typeof (globalThis as any).import.meta !== 'undefined'
                             ? (globalThis as any).import.meta.env?.VITE_CHATKIT_BACKEND_URL
                             : undefined) ||
-                           'http://localhost:8000/chatkit';
+                           'http://localhost:8001/chatkit';
 
       console.log('[ChatWidget] VITE_CHATKIT_BACKEND_URL from env:', envBackendUrl);
       setBackendUrl(envBackendUrl);
     } catch (error) {
       console.warn('[ChatWidget] Could not access import.meta.env, using default:', error);
-      setBackendUrl('http://localhost:8000/chatkit');
+      setBackendUrl('http://localhost:8001/chatkit');
     }
   }, []);
 
@@ -112,6 +112,17 @@ const ChatWidget: React.FC = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleNewChat = () => {
+    console.log('[ChatWidget] Starting new chat - clearing thread ID');
+    try {
+      localStorage.removeItem('physai-chatkit-thread-id');
+      // Reload the page to start fresh
+      window.location.reload();
+    } catch (error) {
+      console.error('[ChatWidget] Error clearing thread ID:', error);
+    }
+  };
+
   console.log('[ChatWidget] ✅ RENDERING WIDGET - isReady:', isReady, 'chatKit exists:', !!chatKit, 'isOpen:', isOpen);
 
   // ALWAYS render the button, even if chatKit isn't ready yet
@@ -173,15 +184,25 @@ const ChatWidget: React.FC = () => {
               <Bot width={20} height={20} />
               PhysAI Assistant
             </h3>
-            <button
-              onClick={toggleChat}
-              style={{ backgroundColor: 'transparent', border: 'none', color: 'white', cursor: 'pointer', padding: '0.25rem', borderRadius: '50%' }}
-              aria-label="Close chat"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </button>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <button
+                onClick={handleNewChat}
+                style={{ backgroundColor: 'rgba(255, 255, 255, 0.2)', border: 'none', color: 'white', cursor: 'pointer', padding: '0.5rem 0.75rem', borderRadius: '0.25rem', fontSize: '0.875rem', fontWeight: '500' }}
+                aria-label="Start new chat"
+                title="Start new chat"
+              >
+                New Chat
+              </button>
+              <button
+                onClick={toggleChat}
+                style={{ backgroundColor: 'transparent', border: 'none', color: 'white', cursor: 'pointer', padding: '0.25rem', borderRadius: '50%' }}
+                aria-label="Close chat"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </button>
+            </div>
           </div>
 
           {/* ChatKit Component */}
@@ -224,15 +245,25 @@ const ChatWidget: React.FC = () => {
               <Bot width={20} height={20} />
               PhysAI Assistant
             </h3>
-            <button
-              onClick={toggleChat}
-              style={{ backgroundColor: 'transparent', border: 'none', color: 'white', cursor: 'pointer', padding: '0.25rem', borderRadius: '50%' }}
-              aria-label="Close chat"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </button>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <button
+                onClick={handleNewChat}
+                style={{ backgroundColor: 'rgba(255, 255, 255, 0.2)', border: 'none', color: 'white', cursor: 'pointer', padding: '0.5rem 0.75rem', borderRadius: '0.25rem', fontSize: '0.875rem', fontWeight: '500' }}
+                aria-label="Start new chat"
+                title="Start new chat"
+              >
+                New Chat
+              </button>
+              <button
+                onClick={toggleChat}
+                style={{ backgroundColor: 'transparent', border: 'none', color: 'white', cursor: 'pointer', padding: '0.25rem', borderRadius: '50%' }}
+                aria-label="Close chat"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </button>
+            </div>
           </div>
           <div style={{ padding: '1rem', textAlign: 'center', color: '#6b7280' }}>
             Loading chat...
