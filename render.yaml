@@ -1,9 +1,41 @@
 services:
-- type: web
-  name: physai-backend
-  runtime: python
-  buildCommand: pip install -r backend/requirements.txt
-  startCommand: python backend/ingest.py && uvicorn backend.main:app --host 0.0.0.0 --port 10000
-  envVars:
-  - key: PYTHON_VERSION
-    value: 3.11.0
+  # Main RAG Backend (port 8000 locally, 10000 on Render)
+  - type: web
+    name: physai-backend-rag
+    runtime: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: python backend/ingest.py && uvicorn backend.main:app --host 0.0.0.0 --port 10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: QDRANT_URL
+        sync: false
+      - key: QDRANT_API_KEY
+        sync: false
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: PORT
+        value: 10000
+    healthCheckPath: /api/health
+
+  # ChatKit Backend (port 8001 locally, 10000 on Render)
+  - type: web
+    name: physai-backend-chatkit
+    runtime: python
+    buildCommand: |
+      cd backend-chatkit && pip install -r requirements.txt
+    startCommand: cd backend-chatkit && uvicorn main:app --host 0.0.0.0 --port 10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: QDRANT_URL
+        sync: false
+      - key: QDRANT_API_KEY
+        sync: false
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: PORT
+        value: 10000
+    healthCheckPath: /health

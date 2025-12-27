@@ -6,7 +6,7 @@ const ChatWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [initialThread, setInitialThread] = useState<string | undefined>(undefined);
   const [isReady, setIsReady] = useState(false);
-  const [backendUrl, setBackendUrl] = useState<string>('http://localhost:8001/chatkit');
+  const [backendUrl, setBackendUrl] = useState<string>('http://localhost:8000/chatkit');
 
   // ============================================================
   // DEBUGGING & ENVIRONMENT: Initialize client-side state
@@ -24,13 +24,13 @@ const ChatWidget: React.FC = () => {
                             typeof (globalThis as any).import.meta !== 'undefined'
                             ? (globalThis as any).import.meta.env?.VITE_CHATKIT_BACKEND_URL
                             : undefined) ||
-                           'http://localhost:8001/chatkit';
+                           'http://localhost:8000/chatkit';
 
       console.log('[ChatWidget] VITE_CHATKIT_BACKEND_URL from env:', envBackendUrl);
       setBackendUrl(envBackendUrl);
     } catch (error) {
       console.warn('[ChatWidget] Could not access import.meta.env, using default:', error);
-      setBackendUrl('http://localhost:8001/chatkit');
+      setBackendUrl('http://localhost:8000/chatkit');
     }
   }, []);
 
