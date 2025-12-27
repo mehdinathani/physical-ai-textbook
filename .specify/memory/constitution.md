@@ -1,8 +1,7 @@
 <!--
 Sync Impact Report:
-- Version change: 1.0.0 → 1.1.0
-- Added sections: Spec-Driven Execution, Bilingual Excellence, Hackathon Velocity, AI-Native First principles
-- Modified principles: Academic Rigor → Spec-Driven Execution, Hackathon Efficiency → Hackathon Velocity, Code Quality → Bilingual Excellence, Performance Efficiency → AI-Native First
+- Version change: 1.2.0 → 1.3.0
+- Added sections: Agent & Skill Discovery principle
 - Templates requiring updates: ✅ .specify/templates/plan-template.md, ✅ .specify/templates/spec-template.md, ✅ .specify/templates/tasks-template.md
 - Follow-up TODOs: None
 -->
@@ -31,6 +30,9 @@ Build the book structure (Docusaurus) so that adding the Chatbot and Auth in Pha
 ### Context Awareness
 Always check `specs/tasks.md` before starting work to maintain history and ensure alignment with project requirements. Follow established patterns and maintain consistency with existing architecture and codebase.
 
+### Agent & Skill Discovery
+Before starting any task, must check and utilize relevant agents in `.claude/agents/` and relevant skills in `.claude/skills/`. Leverage specialized agents for complex workflows (e.g., spec-architect for specifications, content-implementer for lessons) and skills for pattern consistency (e.g., canonical-format-checker, content-evaluation-framework). Prefer purpose-built tools and workflows over generic approaches to ensure quality and maintainability.
+
 ### Clean UX
 Prioritize readability, high contrast, and intuitive navigation in all user-facing interfaces. Implement consistent design patterns, accessible color schemes, and clear information architecture to enhance the learning experience. Chat widgets must be unobtrusive, responsive, and Z-index optimized.
 
@@ -56,4 +58,4 @@ Zero-tolerance for build failures on Vercel (Frontend) or Render (Backend). All 
 
 Version changes follow semantic versioning: MAJOR for principle changes, MINOR for additions, PATCH for clarifications. Amendments require documentation of rationale and team approval.
 
-**Version**: 1.1.0 | **Ratified**: 2025-12-06 | **Last Amended**: 2025-12-13
+**Version**: 1.3.0 | **Ratified**: 2025-12-06 | **Last Amended**: 2025-12-25

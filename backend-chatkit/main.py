@@ -2,7 +2,7 @@ import os
 import uuid
 from pathlib import Path
 from datetime import datetime, timezone
-from typing import Any, AsyncIterator
+from typing import Any, AsyncIterator, List
 from dataclasses import dataclass, field
 
 from dotenv import load_dotenv
@@ -18,6 +18,10 @@ from chatkit.server import ChatKitServer, StreamingResult
 from chatkit.store import Store
 from chatkit.types import ThreadMetadata, ThreadItem, Page
 from chatkit.agents import AgentContext, stream_agent_response, ThreadItemConverter
+
+# Import for RAG (Qdrant + Google embeddings)
+from qdrant_client import QdrantClient
+import google.generativeai as genai
 
 # Load .env from project root and backend-chatkit directory
 ROOT_DIR = Path(__file__).parent.parent
@@ -176,6 +180,40 @@ def safe_print(message: str) -> None:
         print(message.encode('ascii', 'replace').decode('ascii'))
 
 
+# RAG: Embedding generation function (same as main backend)
+def get_embedding(text: str) -> List[float]:
+    """Get embedding for a single text using Google's text-embedding-004 model."""
+    google_api_key = os.getenv("GOOGLE_API_KEY")
+    if not google_api_key:
+        raise ValueError("GOOGLE_API_KEY environment variable is not set")
+
+    genai.configure(api_key=google_api_key)
+
+    result = genai.embed_content(
+        model="models/text-embedding-004",
+        content=[text],
+        task_type="RETRIEVAL_QUERY"
+    )
+
+    return result['embedding'][0]
+
+
+# RAG: Initialize Qdrant client
+def get_qdrant_client() -> QdrantClient:
+    """Initialize and return Qdrant client."""
+    qdrant_url = os.getenv("QDRANT_URL")
+    qdrant_api_key = os.getenv("QDRANT_API_KEY")
+
+    if not all([qdrant_url, qdrant_api_key]):
+        raise ValueError("Missing QDRANT_URL or QDRANT_API_KEY")
+
+    return QdrantClient(
+        url=qdrant_url,
+        api_key=qdrant_api_key,
+        timeout=30
+    )
+
+
 # Gemini model via LiteLLM
 # Note: gemini-2.0-flash has quota issues, using gemini-2.5-flash-lite which works
 gemini_model = LitellmModel(
@@ -216,6 +254,73 @@ class GeminiChatKitServer(ChatKitServer[dict]):
             all_items.append(input)
 
         print(f"[Server] Processing {len(all_items)} items for agent")
+
+        # ============================================================
+        # RAG: Extract user's latest message for context retrieval
+        # ============================================================
+        user_message = ""
+        if input and hasattr(input, 'content') and input.content:
+            for part in input.content:
+                if hasattr(part, 'text'):
+                    user_message = part.text
+                    break
+
+        rag_context = ""
+        if user_message:
+            try:
+                print(f"[Server] RAG: Searching for context for query: {user_message[:50]}...")
+
+                # Get embedding for user's message
+                query_embedding = get_embedding(user_message)
+
+                # Search Qdrant for relevant textbook content
+                qdrant_client = get_qdrant_client()
+                search_results = qdrant_client.query_points(
+                    collection_name="textbook_docs",
+                    query=query_embedding,
+                    limit=3,  # Top 3 most relevant chunks
+                    with_payload=True
+                ).points
+
+                if search_results:
+                    print(f"[Server] RAG: Found {len(search_results)} relevant chunks")
+                    context_parts = []
+                    for result in search_results:
+                        payload = result.payload
+                        source = payload.get('source', 'Unknown')
+                        text = payload.get('text', '')
+                        context_parts.append(f"[From {source}]:\n{text}")
+
+                    rag_context = "\n\n".join(context_parts)
+                else:
+                    print("[Server] RAG: No relevant context found")
+
+            except Exception as e:
+                print(f"[Server] RAG: Error during search: {e}")
+                # Continue without RAG context if error occurs
+
+        # Update agent instructions with RAG context if available
+        if rag_context:
+            self.assistant_agent.instructions = f"""You are an expert tutor for Physical AI & Humanoid Robotics.
+Use the following context from the textbook to answer the user's question accurately.
+
+IMPORTANT: Start your response with "📚 [Based on textbook content]" to indicate you're using the textbook.
+If the context doesn't contain relevant information, start with "💭 [Using general knowledge]" instead.
+
+TEXTBOOK CONTEXT:
+{rag_context}
+
+Help students understand concepts clearly and encourage hands-on learning."""
+            print("[Server] RAG: Updated agent with textbook context")
+            print(f"[Server] RAG: Context preview: {rag_context[:200]}...")
+        else:
+            # Reset to original instructions if no context
+            self.assistant_agent.instructions = """You are an expert tutor for Physical AI & Humanoid Robotics.
+
+IMPORTANT: Start your response with "💭 [Using general knowledge]" to indicate you're using general knowledge.
+
+Help students understand concepts related to robotics, ROS2, Isaac Sim, and humanoid development. Be clear, educational, and encourage hands-on learning."""
+            print("[Server] RAG: No context found, using general knowledge")
 
         # Convert thread items to agent input format using ChatKit's converter
         agent_input = await self.converter.to_agent_input(all_items) if all_items else []
