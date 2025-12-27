@@ -121,7 +121,7 @@ class MemoryStore(Store[dict]):
                 if hasattr(part, 'text'):
                     content_preview = part.text[:50] + "..." if len(part.text) > 50 else part.text
                     break
-        print(f"[Store] add_thread_item: id={item.id}, type={item_type}, content='{content_preview}'")
+        safe_print(f"[Store] add_thread_item: id={item.id}, type={item_type}, content='{content_preview}'")
 
         # Check if item exists, update if so
         for i, existing in enumerate(state.items):
@@ -164,6 +164,16 @@ class MemoryStore(Store[dict]):
 
     async def delete_attachment(self, attachment_id: str, context: dict) -> None:
         self._attachments.pop(attachment_id, None)
+
+
+# Helper function to safely print Unicode characters on Windows
+def safe_print(message: str) -> None:
+    """Print with Unicode support, handling Windows console encoding issues."""
+    try:
+        print(message)
+    except UnicodeEncodeError:
+        # Fallback: encode to ASCII with replacement for problematic characters
+        print(message.encode('ascii', 'replace').decode('ascii'))
 
 
 # Gemini model via LiteLLM
@@ -232,13 +242,13 @@ class GeminiChatKitServer(ChatKitServer[dict]):
                 if hasattr(event, 'item'):
                     print(f"[Server]   item.id: {event.item.id if hasattr(event.item, 'id') else 'N/A'}")
                 if hasattr(event, 'update'):
-                    print(f"[Server]   update: {event.update}")
+                    safe_print(f"[Server]   update: {event.update}")
 
                 # Track if we've seen any assistant content
                 if event.type == "thread.item.added":
                     if isinstance(event.item, AssistantMessageItem):
                         seen_assistant_content = True
-                        print(f"[Server] Assistant item added - content preview:", str(event.item.content)[:100] if event.item.content else "empty")
+                        safe_print(f"[Server] Assistant item added - content preview: {str(event.item.content)[:100] if event.item.content else 'empty'}")
 
                 # Fix potential ID collisions from LiteLLM/Gemini
                 if event.type == "thread.item.added":
@@ -270,7 +280,7 @@ class GeminiChatKitServer(ChatKitServer[dict]):
                     if hasattr(event, 'update') and hasattr(event.update, 'delta'):
                         if event.update.type == 'assistant_message.content_part.text_delta' and hasattr(event.update.delta, 'text'):
                             accumulated_text += event.update.delta.text
-                            print(f"[Server] Accumulated text so far: {accumulated_text[:50]}...")
+                            safe_print(f"[Server] Accumulated text so far: {accumulated_text[:50]}...")
 
                 yield event
         except Exception as e:
@@ -323,33 +333,6 @@ def convert_camelcase_to_snakecase(data):
             if '.' in type_val:
                 prefix, action = type_val.split('.', 1)
                 new_dict['type'] = f"{prefix}.{camel_to_snake(action)}"
-
-                # Wrap fields in 'params' for ChatKit v1.3.0 backend format
-                # Extract fields that should go into params
-                if new_dict['type'] == 'threads.add_user_message':
-                    # Move thread_id and content into params.input
-                    params_dict = {}
-                    if 'thread_id' in new_dict:
-                        params_dict['thread_id'] = new_dict.pop('thread_id')
-                    if 'content' in new_dict:
-                        content = new_dict.pop('content')
-                        # Convert content item types: 'text' -> 'input_text'
-                        converted_content = []
-                        for item in content:
-                            if isinstance(item, dict) and item.get('type') == 'text':
-                                converted_content.append({
-                                    'type': 'input_text',
-                                    'text': item.get('text', '')
-                                })
-                            else:
-                                converted_content.append(item)
-
-                        params_dict['input'] = {
-                            'content': converted_content,
-                            'attachments': [],
-                            'inference_options': {}
-                        }
-                    new_dict['params'] = params_dict
 
         return new_dict
     elif isinstance(data, list):
