@@ -1,48 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { ChatKit, useChatKit } from '@openai/chatkit-react';
 import { Bot } from 'lucide-react';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 const ChatWidget: React.FC = () => {
+  const { siteConfig } = useDocusaurusContext();
   const [isOpen, setIsOpen] = useState(false);
   const [initialThread, setInitialThread] = useState<string | undefined>(undefined);
   const [isReady, setIsReady] = useState(false);
-  const [backendUrl, setBackendUrl] = useState<string>('http://localhost:8000/chatkit');
-  const [domainKey, setDomainKey] = useState<string>('localhost');
+
+  // Get environment variables from Docusaurus customFields
+  const configBackendUrl = (siteConfig.customFields?.VITE_CHATKIT_BACKEND_URL as string) || 'http://localhost:8000/chatkit';
+  const configDomainKey = (siteConfig.customFields?.VITE_CHATKIT_DOMAIN_KEY as string) || 'localhost';
+
+  const [backendUrl, setBackendUrl] = useState<string>(configBackendUrl);
+  const [domainKey, setDomainKey] = useState<string>(configDomainKey);
 
   // ============================================================
   // DEBUGGING & ENVIRONMENT: Initialize client-side state
   // ============================================================
   useEffect(() => {
     console.log('[ChatWidget] Component mounted on client');
-    console.log('[ChatWidget] typeof window:', typeof window);
-    console.log('[ChatWidget] typeof import.meta:', typeof (globalThis as any).import?.meta);
+    console.log('[ChatWidget] Docusaurus customFields:', siteConfig.customFields);
+    console.log('[ChatWidget] Backend URL from config:', configBackendUrl);
+    console.log('[ChatWidget] Domain Key from config:', configDomainKey);
 
-    // CRITICAL: Only access import.meta.env inside useEffect (client-side only)
-    try {
-      // Use dynamic property access to avoid webpack parsing errors
-      const envBackendUrl = (globalThis as any).__VITE_CHATKIT_BACKEND_URL__ ||
-                           (typeof (globalThis as any).import !== 'undefined' &&
-                            typeof (globalThis as any).import.meta !== 'undefined'
-                            ? (globalThis as any).import.meta.env?.VITE_CHATKIT_BACKEND_URL
-                            : undefined) ||
-                           'http://localhost:8000/chatkit';
-
-      const envDomainKey = (globalThis as any).__VITE_CHATKIT_DOMAIN_KEY__ ||
-                          (typeof (globalThis as any).import !== 'undefined' &&
-                           typeof (globalThis as any).import.meta !== 'undefined'
-                           ? (globalThis as any).import.meta.env?.VITE_CHATKIT_DOMAIN_KEY
-                           : undefined) ||
-                          'localhost';
-
-      console.log('[ChatWidget] VITE_CHATKIT_BACKEND_URL from env:', envBackendUrl);
-      console.log('[ChatWidget] VITE_CHATKIT_DOMAIN_KEY from env:', envDomainKey);
-      setBackendUrl(envBackendUrl);
-      setDomainKey(envDomainKey);
-    } catch (error) {
-      console.warn('[ChatWidget] Could not access import.meta.env, using defaults:', error);
-      setBackendUrl('http://localhost:8000/chatkit');
-      setDomainKey('localhost');
-    }
+    // Set from Docusaurus config (already have values from useState initialization)
+    console.log('[ChatWidget] Using backend URL:', backendUrl);
+    console.log('[ChatWidget] Using domain key:', domainKey);
   }, []);
 
   // SSR-safe loading: Load thread ID from localStorage only on client

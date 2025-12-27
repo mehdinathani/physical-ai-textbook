@@ -1,10 +1,20 @@
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+// Load environment variables
+const CHATKIT_BACKEND_URL = process.env.VITE_CHATKIT_BACKEND_URL || 'http://localhost:8000/chatkit';
+const CHATKIT_DOMAIN_KEY = process.env.VITE_CHATKIT_DOMAIN_KEY || 'localhost';
+
 const config: Config = {
   title: 'Physical AI & Humanoid Robotics Textbook',
   tagline: 'From digital AI to embodied intelligence',
   favicon: 'img/favicon.ico',
+
+  // Custom fields to make env vars available to React components
+  customFields: {
+    VITE_CHATKIT_BACKEND_URL: CHATKIT_BACKEND_URL,
+    VITE_CHATKIT_DOMAIN_KEY: CHATKIT_DOMAIN_KEY,
+  },
 
   // Set the production url of your site here
   url: 'https://physai-foundations.vercel.app',
