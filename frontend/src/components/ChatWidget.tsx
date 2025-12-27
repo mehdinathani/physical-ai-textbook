@@ -7,6 +7,7 @@ const ChatWidget: React.FC = () => {
   const [initialThread, setInitialThread] = useState<string | undefined>(undefined);
   const [isReady, setIsReady] = useState(false);
   const [backendUrl, setBackendUrl] = useState<string>('http://localhost:8000/chatkit');
+  const [domainKey, setDomainKey] = useState<string>('localhost');
 
   // ============================================================
   // DEBUGGING & ENVIRONMENT: Initialize client-side state
@@ -26,11 +27,21 @@ const ChatWidget: React.FC = () => {
                             : undefined) ||
                            'http://localhost:8000/chatkit';
 
+      const envDomainKey = (globalThis as any).__VITE_CHATKIT_DOMAIN_KEY__ ||
+                          (typeof (globalThis as any).import !== 'undefined' &&
+                           typeof (globalThis as any).import.meta !== 'undefined'
+                           ? (globalThis as any).import.meta.env?.VITE_CHATKIT_DOMAIN_KEY
+                           : undefined) ||
+                          'localhost';
+
       console.log('[ChatWidget] VITE_CHATKIT_BACKEND_URL from env:', envBackendUrl);
+      console.log('[ChatWidget] VITE_CHATKIT_DOMAIN_KEY from env:', envDomainKey);
       setBackendUrl(envBackendUrl);
+      setDomainKey(envDomainKey);
     } catch (error) {
-      console.warn('[ChatWidget] Could not access import.meta.env, using default:', error);
+      console.warn('[ChatWidget] Could not access import.meta.env, using defaults:', error);
       setBackendUrl('http://localhost:8000/chatkit');
+      setDomainKey('localhost');
     }
   }, []);
 
@@ -82,7 +93,7 @@ const ChatWidget: React.FC = () => {
     chatKit = useChatKit({
       api: {
         url: backendUrl,
-        domainKey: 'localhost',  // Required by schema, but verification skipped for localhost
+        domainKey: domainKey,  // Domain key from environment (localhost for dev, production key for prod)
       },
       theme: 'dark',
       initialThread: initialThread || undefined,
