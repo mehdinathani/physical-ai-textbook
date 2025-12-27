@@ -24,11 +24,11 @@ Deploy both backend services (RAG + ChatKit) to Render.com free tier with comple
 **Estimated Time**: 5 minutes
 
 **Acceptance Criteria**:
-- [ ] `git status` shows clean working directory or only documentation files
-- [ ] `render.yaml` exists at repository root
-- [ ] Both `backend/requirements.txt` and `backend-chatkit/requirements.txt` exist
-- [ ] Latest changes committed to master branch
-- [ ] Remote repository up to date with local
+- [X] `git status` shows clean working directory or only documentation files
+- [X] `render.yaml` exists at repository root
+- [X] Both `backend/requirements.txt` and `backend-chatkit/requirements.txt` exist
+- [X] Latest changes committed to master branch
+- [X] Remote repository up to date with local
 
 **Implementation**:
 ```bash
