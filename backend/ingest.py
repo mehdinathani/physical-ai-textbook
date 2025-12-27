@@ -171,7 +171,8 @@ def main():
         print(f"Collection '{collection_name}' created with {vector_size}-dimension vectors")
 
     # Find all markdown files
-    docs_dir = os.path.join(os.getcwd(), "frontend", "docs")
+    # When running from backend directory, go up one level to find frontend
+    docs_dir = os.path.join(os.path.dirname(os.getcwd()), "frontend", "docs")
     print(f"Looking for docs in: {docs_dir}")
     md_files = find_markdown_files(docs_dir)
 
