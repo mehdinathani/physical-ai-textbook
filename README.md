@@ -200,6 +200,7 @@ Frontend automatically deploys from GitHub `master` branch.
 
 - **Deployment Guide**: `DEPLOYMENT_GUIDE.md`
 - **Production URLs**: `PRODUCTION_URLS.md`
+- **Deployment Runbook**: `docs/DEPLOYMENT_RUNBOOK.md`
 - **ChatKit Setup**: `CHATKIT_SETUP.md`
 - **Project Constitution**: `.specify/memory/constitution.md`
 - **Deployment Plan**: `specs/master/plan.md`
