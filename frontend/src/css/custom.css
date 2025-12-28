@@ -1,36 +1,331 @@
 /**
- * Copyright (c) Meta Platforms, Inc. and affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
+ * PhysAI Foundations - Modern UI/UX Theme
+ * Design Philosophy: Modern Technical/Industrial (Stripe/Linear inspired)
  */
 
-/* You can override the default Docusaurus variables here. */
+/* ============================================
+   T001: Google Fonts Import
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+/* ============================================
+   T002: Light Mode CSS Variables
+   ============================================ */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  /* Primary Colors - Emerald Palette */
+  --ifm-color-primary: #10b981;           /* Emerald 500 */
+  --ifm-color-primary-dark: #059669;      /* Emerald 600 */
+  --ifm-color-primary-darker: #047857;    /* Emerald 700 */
+  --ifm-color-primary-darkest: #065f46;   /* Emerald 800 */
+  --ifm-color-primary-light: #34d399;     /* Emerald 400 */
+  --ifm-color-primary-lighter: #6ee7b7;   /* Emerald 300 */
+  --ifm-color-primary-lightest: #a7f3d0;  /* Emerald 200 */
+
+  /* Secondary Color - AI Accent */
+  --ifm-color-secondary: #3b82f6;         /* Blue 500 */
+
+  /* Background */
+  --ifm-background-color: #fafafa;        /* Soft off-white */
+  --ifm-background-surface-color: #ffffff;
+
+  /* T004: Typography Variables */
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  --ifm-heading-font-family: 'Plus Jakarta Sans', var(--ifm-font-family-base);
+
+  /* Code Styling */
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(16, 185, 129, 0.1);
+
+  /* Spacing and Radius */
+  --ifm-global-radius: 8px;
+  --ifm-navbar-height: 60px;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* ============================================
+   T003: Dark Mode CSS Variables
+   ============================================ */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  /* Primary Colors - Adjusted for dark mode readability */
+  --ifm-color-primary: #34d399;           /* Emerald 400 */
+  --ifm-color-primary-dark: #10b981;      /* Emerald 500 */
+  --ifm-color-primary-darker: #059669;    /* Emerald 600 */
+  --ifm-color-primary-darkest: #047857;   /* Emerald 700 */
+  --ifm-color-primary-light: #6ee7b7;     /* Emerald 300 */
+  --ifm-color-primary-lighter: #a7f3d0;   /* Emerald 200 */
+  --ifm-color-primary-lightest: #d1fae5;  /* Emerald 100 */
+
+  /* Background - Deep Charcoal (not pitch black) */
+  --ifm-background-color: #0f172a;        /* Slate 900 */
+  --ifm-background-surface-color: #1e293b; /* Slate 800 */
+
+  /* Code Styling */
+  --docusaurus-highlighted-code-line-bg: rgba(52, 211, 153, 0.15);
 }
 
-/* ChatKit Web Component Styling - Critical for proper rendering */
+/* ============================================
+   T005: Navbar Glassmorphism
+   ============================================ */
+.navbar {
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.navbar__title {
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 700;
+}
+
+.navbar__link {
+  font-weight: 500;
+}
+
+[data-theme='dark'] .navbar {
+  background: rgba(15, 23, 42, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ============================================
+   T006: Sidebar Floating Styles
+   ============================================ */
+.menu {
+  border-right: none;
+  padding: 0.5rem;
+}
+
+.menu__link {
+  border-radius: 8px;
+  transition: all 0.15s ease;
+  padding: 0.5rem 0.75rem;
+}
+
+.menu__link:hover:not(.menu__link--active) {
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.menu__link--active {
+  background: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary-darkest);
+  font-weight: 600;
+}
+
+[data-theme='dark'] .menu__link--active {
+  background: rgba(52, 211, 153, 0.15);
+  color: var(--ifm-color-primary-light);
+}
+
+[data-theme='dark'] .menu__link:hover:not(.menu__link--active) {
+  background: rgba(52, 211, 153, 0.08);
+}
+
+.menu__list-item-collapsible:hover {
+  background: transparent;
+}
+
+/* ============================================
+   T007: Admonition Styles
+   ============================================ */
+.admonition {
+  border: none;
+  border-left: 4px solid;
+  border-radius: 0 8px 8px 0;
+  background: transparent;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.admonition-heading {
+  margin-bottom: 0.5rem;
+}
+
+.admonition-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Note */
+.admonition.admonition-note {
+  border-left-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.05);
+}
+
+/* Tip */
+.admonition.admonition-tip {
+  border-left-color: #10b981;
+  background: rgba(16, 185, 129, 0.05);
+}
+
+/* Info */
+.admonition.admonition-info {
+  border-left-color: #06b6d4;
+  background: rgba(6, 182, 212, 0.05);
+}
+
+/* Warning */
+.admonition.admonition-warning,
+.admonition.admonition-caution {
+  border-left-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.05);
+}
+
+/* Danger */
+.admonition.admonition-danger {
+  border-left-color: #ef4444;
+  background: rgba(239, 68, 68, 0.05);
+}
+
+[data-theme='dark'] .admonition.admonition-note {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+[data-theme='dark'] .admonition.admonition-tip {
+  background: rgba(16, 185, 129, 0.1);
+}
+
+[data-theme='dark'] .admonition.admonition-info {
+  background: rgba(6, 182, 212, 0.1);
+}
+
+[data-theme='dark'] .admonition.admonition-warning,
+[data-theme='dark'] .admonition.admonition-caution {
+  background: rgba(245, 158, 11, 0.1);
+}
+
+[data-theme='dark'] .admonition.admonition-danger {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+/* ============================================
+   T008: Doc Card / Pagination Styles
+   ============================================ */
+.pagination-nav__link {
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 1rem 1.25rem;
+  transition: all 0.2s ease;
+  background: var(--ifm-background-surface-color);
+}
+
+.pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+  transform: translateY(-2px);
+}
+
+.pagination-nav__sublabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.7;
+}
+
+.pagination-nav__label {
+  font-weight: 600;
+  color: var(--ifm-color-primary-dark);
+}
+
+[data-theme='dark'] .pagination-nav__link {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme='dark'] .pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 4px 12px rgba(52, 211, 153, 0.2);
+}
+
+/* ============================================
+   T013: Smooth Scrolling
+   ============================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ============================================
+   Additional Polish
+   ============================================ */
+
+/* Headings with custom font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ifm-heading-font-family);
+}
+
+/* Better code blocks */
+pre {
+  border-radius: 8px;
+}
+
+/* Table of contents */
+.table-of-contents__link {
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.table-of-contents__link:hover {
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.table-of-contents__link--active {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+/* Footer styling enhancement */
+.footer {
+  background: var(--ifm-background-surface-color);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] .footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer__title {
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 600;
+}
+
+/* Button enhancements */
+.button--primary {
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.button--primary:hover {
+  background: linear-gradient(135deg, var(--ifm-color-primary-dark) 0%, var(--ifm-color-primary-darker) 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* Search input styling */
+.navbar__search-input {
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.navbar__search-input:focus {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-background-surface-color);
+}
+
+[data-theme='dark'] .navbar__search-input {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ============================================
+   ChatKit Web Component Styling
+   (Preserved from original - Critical for proper rendering)
+   ============================================ */
 openai-chatkit {
   display: flex !important;
   flex-direction: column !important;

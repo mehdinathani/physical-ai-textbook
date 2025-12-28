@@ -98,11 +98,36 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Learn',
           items: [
             {
-              label: 'Textbook',
+              label: 'Introduction',
               to: '/docs/intro',
+            },
+            {
+              label: 'Physical AI Concepts',
+              to: '/docs/module-0/physical-ai-concepts',
+            },
+            {
+              label: 'ROS 2 Architecture',
+              to: '/docs/module-1/ros2-architecture',
+            },
+          ],
+        },
+        {
+          title: 'Resources',
+          items: [
+            {
+              label: 'GitHub Repository',
+              href: 'https://github.com/mehdinathani/physai-foundations',
+            },
+            {
+              label: 'ROS 2 Documentation',
+              href: 'https://docs.ros.org/en/humble/',
+            },
+            {
+              label: 'NVIDIA Isaac Sim',
+              href: 'https://developer.nvidia.com/isaac-sim',
             },
           ],
         },
@@ -110,26 +135,34 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'ROS Discourse',
+              href: 'https://discourse.ros.org/',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'NVIDIA Forums',
+              href: 'https://forums.developer.nvidia.com/c/agx-autonomous-machines/isaac/isaac-sim/',
+            },
+            {
+              label: 'Stack Overflow',
+              href: 'https://stackoverflow.com/questions/tagged/ros2',
             },
           ],
         },
         {
-          title: 'More',
+          title: 'Connect',
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/physai-foundations/physai-foundations',
+              href: 'https://github.com/mehdinathani',
+            },
+            {
+              label: 'LinkedIn',
+              href: 'https://linkedin.com/in/mehdinathani',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} PhysAI Foundations. Built with Docusaurus.`,
+      copyright: `Copyright © 2026 mehdinathani. Built with Docusaurus. Made with ❤️ for the Physical AI community.`,
     },
     prism: {
       theme: require('prism-react-renderer').themes.github,
