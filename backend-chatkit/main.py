@@ -409,7 +409,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
-        "https://physai-foundations.vercel.app"
+        "https://physical-ai-textbook-git-master-mehdinathanis-projects.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
